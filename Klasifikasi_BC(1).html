@@ -1,0 +1,2829 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Klasifikasi Jenis Kanker Payudara &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Klasifikasi_BC';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="AudioEmosi.html" />
+    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Klasifikasi Jenis Kanker Payudara</strong></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/docs/Klasifikasi_BC.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FKlasifikasi_BC.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Klasifikasi_BC.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Klasifikasi Jenis Kanker Payudara</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi-data">Deskripsi Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data">Eksplorasi Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mengubah-kolom-kategorical-menjadi-numerik-menggunakan-label-encoder">1. Mengubah Kolom Kategorical Menjadi Numerik Menggunakan Label Encoder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-menggunakan-z-score">2. Normalisasi Menggunakan Z-Score</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#melakukan-standarisasi-pada-data-train">Melakukan standarisasi pada data train</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reduksi-dimensi-menggunakan-pca">3. Reduksi Dimensi menggunakan PCA</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-metode-machine-learning-terbaik-menggunakan-pycaret">Mencari Metode Machine Learning terbaik menggunakan Pycaret</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simpan-model-terbaik-dari-hasil-pycaret">Simpan Model terbaik dari hasil Pycaret</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="klasifikasi-jenis-kanker-payudara">
+<h1><strong>Klasifikasi Jenis Kanker Payudara</strong><a class="headerlink" href="#klasifikasi-jenis-kanker-payudara" title="Permalink to this heading">#</a></h1>
+<p>Tujuan dari Analisis ini yaitu untuk mengetahui atau untuk memprediksi apakah kita memiliki kanker payudara Ganas atau kanker payudara Jinak. Sehingga dapat membantu kita mencegah terjadinya kanker payudara sejak dini.</p>
+<section id="deskripsi-data">
+<h2>Deskripsi Data<a class="headerlink" href="#deskripsi-data" title="Permalink to this heading">#</a></h2>
+<p>Data yang digunakan yaitu dataset Breast Cancer Wisconsin yang saya peroleh dari UCI</p>
+<p>Dataset Breast Cancer Wisconsin dapat diakses pada link : <a class="reference external" href="https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic">https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic</a></p>
+<p>Tipe data yang yang digunakan pada dataset Breast Cancer Wisconsin adalah numerik dan kategorikal dengan jumlah 32 kolom dimana 30 kolom merupakan fitur, 1 kolom adalah ID dan 1 kolom merupakan label dengan 2 jenis kelas yaitu M (malignant)=Ganas berjumlah 212 dan B (benign) = Jinak berjumlah 357, sehingga total record data yaitu 569.</p>
+<p>Fitur dihitung dari gambar digital aspirasi jarum halus (FNA) dari massa payudara. Mereka menggambarkan karakteristik inti sel yang ada pada gambar.
+Dataset Wisconsin Breast Cancer yang bisa diakses di UCI adalah dataset yang digunakan dalam penelitian kanker payudara. Prosedur aspirasi jarum halus (FNA) membantu menegakkan diagnosis kanker payudara. Bersamaan dengan pemeriksaan fisik payudara dan mamografi, FNAC dapat digunakan untuk mendiagnosis kanker payudara dengan tingkat akurasi yang baik.</p>
+<p>Berikut adalah penjelasan singkat tentang setiap fitur yang ada dalam dataset:</p>
+<ol class="arabic simple">
+<li><p>radius_mean : Rata-rata jari-jari sel kanker(jarak dari pusat ke titik-titik pada keliling).</p></li>
+<li><p>texture_mean : Rata-rata tekstur (perbedaan tingkat kekasaran) sel kanker(standart deviasi nilai skala abu-abu).</p></li>
+<li><p>perimeter_mean : Rata-rata keliling sel kanker.</p></li>
+<li><p>area_mean : Rata-rata luas area sel kanker.</p></li>
+<li><p>smoothness_mean : Rata-rata kehalusan sel kanker.</p></li>
+<li><p>compactness_mean : Rata-rata keliling^2 / luas - 1,0.</p></li>
+<li><p>concavity_mean : Rata-rata cekungan sel kanker (tingkat keparahan bagian kontur yang cekung).</p></li>
+<li><p>concave points_mean : Rata-rata titik cekungan sel kanker.</p></li>
+<li><p>symmetry_mean : Rata-rata simetri sel kanker.</p></li>
+<li><p>fractal_dimension_mean : Rata-rata dimensi fraktal sel kanker (“coastline approximation” - 1).</p></li>
+<li><p>radius_se : Standard error dari jari-jari sel kanker.</p></li>
+<li><p>texture_se : Standard error dari tekstur sel kanker.</p></li>
+<li><p>perimeter_se : Standard error dari keliling sel kanker.</p></li>
+<li><p>area_se : Standard error dari luas area sel kanker.</p></li>
+<li><p>smoothness_se : Standard error dari kehalusan sel kanker.</p></li>
+<li><p>compactness_se : Standard error dari kompak sel kanker.</p></li>
+<li><p>concavity_se : Standard error dari cekungan sel kanker.</p></li>
+<li><p>concave points_se : Standard error dari titik cekungan sel kanker.</p></li>
+<li><p>symmetry_se : Standard error dari simetri sel kanker.</p></li>
+<li><p>fractal_dimension_se : Standard error dari dimensi fraktal sel kanker(“coastline approximation” - 1).</p></li>
+<li><p>radius_worst : Nilai rata-rata “terburuk” atau terbesar dari jari-jari sel kanker.</p></li>
+<li><p>texture_worst : Nilai rata-rata “terburuk” atau terbesar dari tekstur sel kanker.</p></li>
+<li><p>perimeter_worst : Nilai rata-rata “terburuk” atau terbesar dari keliling sel kanker.</p></li>
+<li><p>area_worst : Nilai rata-rata “terburuk” atau terbesar dari luas area sel kanker.</p></li>
+<li><p>smoothness_worst : Nilai rata-rata “terburuk” atau terbesar dari kehalusan sel kanker.</p></li>
+<li><p>compactness_worst : Nilai rata-rata “terburuk” atau terbesar dari kompak sel kanker.</p></li>
+<li><p>concavity_worst : Nilai rata-rata “terburuk” atau terbesar dari cekungan sel kanker.</p></li>
+<li><p>concave points_worst : Nilai rata-rata “terburuk” atau terbesar dari titik cekungan sel kanker.</p></li>
+<li><p>symmetry_worst : Nilai rata-rata “terburuk” atau terbesar dari simetri sel kanker.</p></li>
+<li><p>fractal_dimension_worst : Nilai rata-rata “terburuk” atau terbesar dari dimensi fraktal sel kanker(“coastline approximation” - 1).</p></li>
+</ol>
+<p>Mean, Standard Error dan Worst atau terbesar dari fitur-fitur ini dihitung untuk setiap gambar, sehingga menghasilkan 30 fitur.</p>
+<p><strong>Penjelasan perhitungan yang digunakan pada fitur</strong></p>
+<p>Terkait perhitungan mean (rata-rata), standard error (kesalahan standar), dan worst (terburuk) serta rumus dapat dijelaskan sebagai berikut:</p>
+<ol class="arabic simple">
+<li><p>Mean (Rata-rata):
+Rata-rata adalah nilai tengah dari sejumlah angka. Dalam konteks data kanker payudara, kita bisa menghitung rata-rata dari fitur-fitur seperti <code class="docutils literal notranslate"><span class="pre">radius_mean</span></code>, <code class="docutils literal notranslate"><span class="pre">texture_mean</span></code>, <code class="docutils literal notranslate"><span class="pre">perimeter_mean</span></code>, dan lainnya. Rumusnya sederhana:</p></li>
+</ol>
+<p><span class="math notranslate nohighlight">\( \text{Mean} = \frac{{\sum \text{nilai fitur}}}{\text{jumlah sampel}}\)</span></p>
+<p>Ini adalah jumlah dari semua nilai dalam sampel untuk fitur tertentu, kemudian dibagi dengan jumlah sampel untuk mendapatkan nilai rata-rata dari fitur tersebut.</p>
+<ol class="arabic simple" start="2">
+<li><p>Standard Error (Kesalahan Standar):
+Kesalahan standar (SE) mengukur seberapa akurat rata-rata sampel merepresentasikan rata-rata populasi sebenarnya. Untuk menghitung SE, kita gunakan rumus:</p></li>
+</ol>
+<p><span class="math notranslate nohighlight">\(SE = \frac{s}{\sqrt{n}}\)</span></p>
+<p>di mana:</p>
+<ul class="simple">
+<li><p>( s ) adalah deviasi standar dari sampel.</p></li>
+<li><p>( n ) adalah jumlah sampel.</p></li>
+</ul>
+<p>Untuk menghitung SE dari fitur-fitur seperti <code class="docutils literal notranslate"><span class="pre">radius_se</span></code>, <code class="docutils literal notranslate"><span class="pre">texture_se</span></code>, dan lainnya, langkah pertama yaitu menghitung deviasi standar dari sampel-sampel yang diamati dan kemudian membaginya dengan akar kuadrat dari jumlah sampel untuk mendapatkan nilai kesalahan standar.</p>
+<ol class="arabic simple" start="3">
+<li><p>Worst (Terburuk):
+Nilai terburuk (worst) adalah nilai maksimum dari sampel yang diamati untuk suatu fitur tertentu. Rumusnya sederhana:</p></li>
+</ol>
+<p><span class="math notranslate nohighlight">\(\text{Worst} = \max(\text{nilai dari sampel})\)</span></p>
+<p>Ini berarti mengambil nilai terbesar dari sampel tersebut sebagai representasi dari “nilai terburuk” dari fitur yang diamati.</p>
+<p>Jadi, ketika berbicara tentang fitur-fitur pada data kanker payudara, perhitungan mean (rata-rata) menghasilkan nilai tengah dari sampel, standard error (kesalahan standar) mengukur seberapa akurat nilai rata-rata tersebut merepresentasikan populasi, dan worst (terburuk) adalah nilai maksimum dari sampel yang diamati untuk setiap fitur.</p>
+</section>
+<section id="eksplorasi-data">
+<h2>Eksplorasi Data<a class="headerlink" href="#eksplorasi-data" title="Permalink to this heading">#</a></h2>
+<p><strong>Import Library</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Math</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Import Dataset</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Membaca data dari file CSV menggunakan pandas</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/dsty13/dataset/main/breast-cancer.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-c905bddc-800d-49cf-bcdd-fc59db81b518" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>diagnosis</th>
+      <th>radius_mean</th>
+      <th>texture_mean</th>
+      <th>perimeter_mean</th>
+      <th>area_mean</th>
+      <th>smoothness_mean</th>
+      <th>compactness_mean</th>
+      <th>concavity_mean</th>
+      <th>concave points_mean</th>
+      <th>...</th>
+      <th>radius_worst</th>
+      <th>texture_worst</th>
+      <th>perimeter_worst</th>
+      <th>area_worst</th>
+      <th>smoothness_worst</th>
+      <th>compactness_worst</th>
+      <th>concavity_worst</th>
+      <th>concave points_worst</th>
+      <th>symmetry_worst</th>
+      <th>fractal_dimension_worst</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>842302</td>
+      <td>M</td>
+      <td>17.99</td>
+      <td>10.38</td>
+      <td>122.80</td>
+      <td>1001.0</td>
+      <td>0.11840</td>
+      <td>0.27760</td>
+      <td>0.30010</td>
+      <td>0.14710</td>
+      <td>...</td>
+      <td>25.380</td>
+      <td>17.33</td>
+      <td>184.60</td>
+      <td>2019.0</td>
+      <td>0.16220</td>
+      <td>0.66560</td>
+      <td>0.7119</td>
+      <td>0.2654</td>
+      <td>0.4601</td>
+      <td>0.11890</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>842517</td>
+      <td>M</td>
+      <td>20.57</td>
+      <td>17.77</td>
+      <td>132.90</td>
+      <td>1326.0</td>
+      <td>0.08474</td>
+      <td>0.07864</td>
+      <td>0.08690</td>
+      <td>0.07017</td>
+      <td>...</td>
+      <td>24.990</td>
+      <td>23.41</td>
+      <td>158.80</td>
+      <td>1956.0</td>
+      <td>0.12380</td>
+      <td>0.18660</td>
+      <td>0.2416</td>
+      <td>0.1860</td>
+      <td>0.2750</td>
+      <td>0.08902</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>84300903</td>
+      <td>M</td>
+      <td>19.69</td>
+      <td>21.25</td>
+      <td>130.00</td>
+      <td>1203.0</td>
+      <td>0.10960</td>
+      <td>0.15990</td>
+      <td>0.19740</td>
+      <td>0.12790</td>
+      <td>...</td>
+      <td>23.570</td>
+      <td>25.53</td>
+      <td>152.50</td>
+      <td>1709.0</td>
+      <td>0.14440</td>
+      <td>0.42450</td>
+      <td>0.4504</td>
+      <td>0.2430</td>
+      <td>0.3613</td>
+      <td>0.08758</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>84348301</td>
+      <td>M</td>
+      <td>11.42</td>
+      <td>20.38</td>
+      <td>77.58</td>
+      <td>386.1</td>
+      <td>0.14250</td>
+      <td>0.28390</td>
+      <td>0.24140</td>
+      <td>0.10520</td>
+      <td>...</td>
+      <td>14.910</td>
+      <td>26.50</td>
+      <td>98.87</td>
+      <td>567.7</td>
+      <td>0.20980</td>
+      <td>0.86630</td>
+      <td>0.6869</td>
+      <td>0.2575</td>
+      <td>0.6638</td>
+      <td>0.17300</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>84358402</td>
+      <td>M</td>
+      <td>20.29</td>
+      <td>14.34</td>
+      <td>135.10</td>
+      <td>1297.0</td>
+      <td>0.10030</td>
+      <td>0.13280</td>
+      <td>0.19800</td>
+      <td>0.10430</td>
+      <td>...</td>
+      <td>22.540</td>
+      <td>16.67</td>
+      <td>152.20</td>
+      <td>1575.0</td>
+      <td>0.13740</td>
+      <td>0.20500</td>
+      <td>0.4000</td>
+      <td>0.1625</td>
+      <td>0.2364</td>
+      <td>0.07678</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>564</th>
+      <td>926424</td>
+      <td>M</td>
+      <td>21.56</td>
+      <td>22.39</td>
+      <td>142.00</td>
+      <td>1479.0</td>
+      <td>0.11100</td>
+      <td>0.11590</td>
+      <td>0.24390</td>
+      <td>0.13890</td>
+      <td>...</td>
+      <td>25.450</td>
+      <td>26.40</td>
+      <td>166.10</td>
+      <td>2027.0</td>
+      <td>0.14100</td>
+      <td>0.21130</td>
+      <td>0.4107</td>
+      <td>0.2216</td>
+      <td>0.2060</td>
+      <td>0.07115</td>
+    </tr>
+    <tr>
+      <th>565</th>
+      <td>926682</td>
+      <td>M</td>
+      <td>20.13</td>
+      <td>28.25</td>
+      <td>131.20</td>
+      <td>1261.0</td>
+      <td>0.09780</td>
+      <td>0.10340</td>
+      <td>0.14400</td>
+      <td>0.09791</td>
+      <td>...</td>
+      <td>23.690</td>
+      <td>38.25</td>
+      <td>155.00</td>
+      <td>1731.0</td>
+      <td>0.11660</td>
+      <td>0.19220</td>
+      <td>0.3215</td>
+      <td>0.1628</td>
+      <td>0.2572</td>
+      <td>0.06637</td>
+    </tr>
+    <tr>
+      <th>566</th>
+      <td>926954</td>
+      <td>M</td>
+      <td>16.60</td>
+      <td>28.08</td>
+      <td>108.30</td>
+      <td>858.1</td>
+      <td>0.08455</td>
+      <td>0.10230</td>
+      <td>0.09251</td>
+      <td>0.05302</td>
+      <td>...</td>
+      <td>18.980</td>
+      <td>34.12</td>
+      <td>126.70</td>
+      <td>1124.0</td>
+      <td>0.11390</td>
+      <td>0.30940</td>
+      <td>0.3403</td>
+      <td>0.1418</td>
+      <td>0.2218</td>
+      <td>0.07820</td>
+    </tr>
+    <tr>
+      <th>567</th>
+      <td>927241</td>
+      <td>M</td>
+      <td>20.60</td>
+      <td>29.33</td>
+      <td>140.10</td>
+      <td>1265.0</td>
+      <td>0.11780</td>
+      <td>0.27700</td>
+      <td>0.35140</td>
+      <td>0.15200</td>
+      <td>...</td>
+      <td>25.740</td>
+      <td>39.42</td>
+      <td>184.60</td>
+      <td>1821.0</td>
+      <td>0.16500</td>
+      <td>0.86810</td>
+      <td>0.9387</td>
+      <td>0.2650</td>
+      <td>0.4087</td>
+      <td>0.12400</td>
+    </tr>
+    <tr>
+      <th>568</th>
+      <td>92751</td>
+      <td>B</td>
+      <td>7.76</td>
+      <td>24.54</td>
+      <td>47.92</td>
+      <td>181.0</td>
+      <td>0.05263</td>
+      <td>0.04362</td>
+      <td>0.00000</td>
+      <td>0.00000</td>
+      <td>...</td>
+      <td>9.456</td>
+      <td>30.37</td>
+      <td>59.16</td>
+      <td>268.6</td>
+      <td>0.08996</td>
+      <td>0.06444</td>
+      <td>0.0000</td>
+      <td>0.0000</td>
+      <td>0.2871</td>
+      <td>0.07039</td>
+    </tr>
+  </tbody>
+</table>
+<p>569 rows × 32 columns</p>
+</div>
+    <div class="colab-df-buttons">
+      
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-c905bddc-800d-49cf-bcdd-fc59db81b518')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+      
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+    
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-c905bddc-800d-49cf-bcdd-fc59db81b518 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-c905bddc-800d-49cf-bcdd-fc59db81b518');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+  
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span> <span class="c1">#cek jumlah baris dan kolom</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(569, 32)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;diagnosis&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="c1">#cek jumlah masing-masing kelas</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>B    357
+M    212
+Name: diagnosis, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="c1">#menampilkan nama-nama kolom</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;id&#39;, &#39;diagnosis&#39;, &#39;radius_mean&#39;, &#39;texture_mean&#39;, &#39;perimeter_mean&#39;,
+       &#39;area_mean&#39;, &#39;smoothness_mean&#39;, &#39;compactness_mean&#39;, &#39;concavity_mean&#39;,
+       &#39;concave points_mean&#39;, &#39;symmetry_mean&#39;, &#39;fractal_dimension_mean&#39;,
+       &#39;radius_se&#39;, &#39;texture_se&#39;, &#39;perimeter_se&#39;, &#39;area_se&#39;, &#39;smoothness_se&#39;,
+       &#39;compactness_se&#39;, &#39;concavity_se&#39;, &#39;concave points_se&#39;, &#39;symmetry_se&#39;,
+       &#39;fractal_dimension_se&#39;, &#39;radius_worst&#39;, &#39;texture_worst&#39;,
+       &#39;perimeter_worst&#39;, &#39;area_worst&#39;, &#39;smoothness_worst&#39;,
+       &#39;compactness_worst&#39;, &#39;concavity_worst&#39;, &#39;concave points_worst&#39;,
+       &#39;symmetry_worst&#39;, &#39;fractal_dimension_worst&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Cek Missing Value</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cek apakah terdapat missing value di setiap kolom</span>
+<span class="n">missing_values</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">missing_values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id                         0
+diagnosis                  0
+radius_mean                0
+texture_mean               0
+perimeter_mean             0
+area_mean                  0
+smoothness_mean            0
+compactness_mean           0
+concavity_mean             0
+concave points_mean        0
+symmetry_mean              0
+fractal_dimension_mean     0
+radius_se                  0
+texture_se                 0
+perimeter_se               0
+area_se                    0
+smoothness_se              0
+compactness_se             0
+concavity_se               0
+concave points_se          0
+symmetry_se                0
+fractal_dimension_se       0
+radius_worst               0
+texture_worst              0
+perimeter_worst            0
+area_worst                 0
+smoothness_worst           0
+compactness_worst          0
+concavity_worst            0
+concave points_worst       0
+symmetry_worst             0
+fractal_dimension_worst    0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>.isnull() adalah metode Pandas yang digunakan untuk menandai setiap sel dalam DataFrame yang memiliki nilai kosong atau missing value, yang mana mengembalikan DataFrame baru dengan seluruh nilai yang awalnya kosong atau NaN diisi dengan nilai True, sedangkan nilai yang ada diisi dengan False.</p>
+<p>.sum() adalah metode Pandas yang akan menjumlahkan semua nilai boolean (True yang diinterpretasikan sebagai 1 dan False yang diinterpretasikan sebagai 0) dalam DataFrame yang dihasilkan oleh .isnull(). Dengan melakukan hal ini pada setiap kolom, sehingga mendapatkan jumlah nilai kosong atau missing value di setiap kolom DataFrame.</p>
+<p>Dari hasil di atas diperoleh nilai untuk masing-masing kolom yaitu 0 artinya tidak ada missing value.</p>
+<p>##Preprocessing</p>
+<section id="mengubah-kolom-kategorical-menjadi-numerik-menggunakan-label-encoder">
+<h3>1. Mengubah Kolom Kategorical Menjadi Numerik Menggunakan Label Encoder<a class="headerlink" href="#mengubah-kolom-kategorical-menjadi-numerik-menggunakan-label-encoder" title="Permalink to this heading">#</a></h3>
+<p>Mengubah kolom kategorikal menjadi numerik menggunakan label encoder adalah suatu teknik dalam pemrosesan data yang sering digunakan dalam analisis data dan pembuatan model machine learning.</p>
+<p>Label encoder akan menggantikan setiap nilai unik dalam kolom kategorikal dengan nilai numerik. Nilai-nilai numerik ini akan digunakan dalam analisis atau pemodelan selanjutnya.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kolom</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;diagnosis&#39;</span><span class="p">]</span> <span class="c1">#inisialisasi kolom kategorikal yang akan di proses untuk dirubah menjadi numerik\bilangan bulat</span>
+<span class="n">encoder</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span> <span class="c1">#library scikit-learn yang digunakan untuk mengubah nilai-nilai dalam satu kolom menjadi nilai-nilai integer</span>
+<span class="c1">#melakukan looping untuk memetakan nilai-nilai unik dalam kolom &#39;diagnosis&#39; menjadi bilangan bulat mulai dari 0 hingga n-1</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">kolom</span> <span class="p">:</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">=</span><span class="n">encoder</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+<span class="c1">#Hasil transformasi disimpan ke dalam kolom &#39;diagnosis&#39; di DataFrame yang sama (df[k]), menimpa nilai-nilai asli dengan nilai-nilai yang telah diubah menjadi bilangan bulat.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menyimpan DataFrame hasil encoder ke dalam file CSV</span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1">#menghapus kolom id</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;BreastCancer.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1">#menyimpan data ke dalam bentuk CSV</span>
+<span class="c1">#Menapilkan data</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/dsty13/dataset/main/BreastCancer.csv&#39;</span><span class="p">)</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-f06eac0b-0dd2-4002-965a-5b081e8ec7b2" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>diagnosis</th>
+      <th>radius_mean</th>
+      <th>texture_mean</th>
+      <th>perimeter_mean</th>
+      <th>area_mean</th>
+      <th>smoothness_mean</th>
+      <th>compactness_mean</th>
+      <th>concavity_mean</th>
+      <th>concave points_mean</th>
+      <th>symmetry_mean</th>
+      <th>...</th>
+      <th>radius_worst</th>
+      <th>texture_worst</th>
+      <th>perimeter_worst</th>
+      <th>area_worst</th>
+      <th>smoothness_worst</th>
+      <th>compactness_worst</th>
+      <th>concavity_worst</th>
+      <th>concave points_worst</th>
+      <th>symmetry_worst</th>
+      <th>fractal_dimension_worst</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>17.99</td>
+      <td>10.38</td>
+      <td>122.80</td>
+      <td>1001.0</td>
+      <td>0.11840</td>
+      <td>0.27760</td>
+      <td>0.30010</td>
+      <td>0.14710</td>
+      <td>0.2419</td>
+      <td>...</td>
+      <td>25.380</td>
+      <td>17.33</td>
+      <td>184.60</td>
+      <td>2019.0</td>
+      <td>0.16220</td>
+      <td>0.66560</td>
+      <td>0.7119</td>
+      <td>0.2654</td>
+      <td>0.4601</td>
+      <td>0.11890</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>20.57</td>
+      <td>17.77</td>
+      <td>132.90</td>
+      <td>1326.0</td>
+      <td>0.08474</td>
+      <td>0.07864</td>
+      <td>0.08690</td>
+      <td>0.07017</td>
+      <td>0.1812</td>
+      <td>...</td>
+      <td>24.990</td>
+      <td>23.41</td>
+      <td>158.80</td>
+      <td>1956.0</td>
+      <td>0.12380</td>
+      <td>0.18660</td>
+      <td>0.2416</td>
+      <td>0.1860</td>
+      <td>0.2750</td>
+      <td>0.08902</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>19.69</td>
+      <td>21.25</td>
+      <td>130.00</td>
+      <td>1203.0</td>
+      <td>0.10960</td>
+      <td>0.15990</td>
+      <td>0.19740</td>
+      <td>0.12790</td>
+      <td>0.2069</td>
+      <td>...</td>
+      <td>23.570</td>
+      <td>25.53</td>
+      <td>152.50</td>
+      <td>1709.0</td>
+      <td>0.14440</td>
+      <td>0.42450</td>
+      <td>0.4504</td>
+      <td>0.2430</td>
+      <td>0.3613</td>
+      <td>0.08758</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>11.42</td>
+      <td>20.38</td>
+      <td>77.58</td>
+      <td>386.1</td>
+      <td>0.14250</td>
+      <td>0.28390</td>
+      <td>0.24140</td>
+      <td>0.10520</td>
+      <td>0.2597</td>
+      <td>...</td>
+      <td>14.910</td>
+      <td>26.50</td>
+      <td>98.87</td>
+      <td>567.7</td>
+      <td>0.20980</td>
+      <td>0.86630</td>
+      <td>0.6869</td>
+      <td>0.2575</td>
+      <td>0.6638</td>
+      <td>0.17300</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>20.29</td>
+      <td>14.34</td>
+      <td>135.10</td>
+      <td>1297.0</td>
+      <td>0.10030</td>
+      <td>0.13280</td>
+      <td>0.19800</td>
+      <td>0.10430</td>
+      <td>0.1809</td>
+      <td>...</td>
+      <td>22.540</td>
+      <td>16.67</td>
+      <td>152.20</td>
+      <td>1575.0</td>
+      <td>0.13740</td>
+      <td>0.20500</td>
+      <td>0.4000</td>
+      <td>0.1625</td>
+      <td>0.2364</td>
+      <td>0.07678</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>564</th>
+      <td>1</td>
+      <td>21.56</td>
+      <td>22.39</td>
+      <td>142.00</td>
+      <td>1479.0</td>
+      <td>0.11100</td>
+      <td>0.11590</td>
+      <td>0.24390</td>
+      <td>0.13890</td>
+      <td>0.1726</td>
+      <td>...</td>
+      <td>25.450</td>
+      <td>26.40</td>
+      <td>166.10</td>
+      <td>2027.0</td>
+      <td>0.14100</td>
+      <td>0.21130</td>
+      <td>0.4107</td>
+      <td>0.2216</td>
+      <td>0.2060</td>
+      <td>0.07115</td>
+    </tr>
+    <tr>
+      <th>565</th>
+      <td>1</td>
+      <td>20.13</td>
+      <td>28.25</td>
+      <td>131.20</td>
+      <td>1261.0</td>
+      <td>0.09780</td>
+      <td>0.10340</td>
+      <td>0.14400</td>
+      <td>0.09791</td>
+      <td>0.1752</td>
+      <td>...</td>
+      <td>23.690</td>
+      <td>38.25</td>
+      <td>155.00</td>
+      <td>1731.0</td>
+      <td>0.11660</td>
+      <td>0.19220</td>
+      <td>0.3215</td>
+      <td>0.1628</td>
+      <td>0.2572</td>
+      <td>0.06637</td>
+    </tr>
+    <tr>
+      <th>566</th>
+      <td>1</td>
+      <td>16.60</td>
+      <td>28.08</td>
+      <td>108.30</td>
+      <td>858.1</td>
+      <td>0.08455</td>
+      <td>0.10230</td>
+      <td>0.09251</td>
+      <td>0.05302</td>
+      <td>0.1590</td>
+      <td>...</td>
+      <td>18.980</td>
+      <td>34.12</td>
+      <td>126.70</td>
+      <td>1124.0</td>
+      <td>0.11390</td>
+      <td>0.30940</td>
+      <td>0.3403</td>
+      <td>0.1418</td>
+      <td>0.2218</td>
+      <td>0.07820</td>
+    </tr>
+    <tr>
+      <th>567</th>
+      <td>1</td>
+      <td>20.60</td>
+      <td>29.33</td>
+      <td>140.10</td>
+      <td>1265.0</td>
+      <td>0.11780</td>
+      <td>0.27700</td>
+      <td>0.35140</td>
+      <td>0.15200</td>
+      <td>0.2397</td>
+      <td>...</td>
+      <td>25.740</td>
+      <td>39.42</td>
+      <td>184.60</td>
+      <td>1821.0</td>
+      <td>0.16500</td>
+      <td>0.86810</td>
+      <td>0.9387</td>
+      <td>0.2650</td>
+      <td>0.4087</td>
+      <td>0.12400</td>
+    </tr>
+    <tr>
+      <th>568</th>
+      <td>0</td>
+      <td>7.76</td>
+      <td>24.54</td>
+      <td>47.92</td>
+      <td>181.0</td>
+      <td>0.05263</td>
+      <td>0.04362</td>
+      <td>0.00000</td>
+      <td>0.00000</td>
+      <td>0.1587</td>
+      <td>...</td>
+      <td>9.456</td>
+      <td>30.37</td>
+      <td>59.16</td>
+      <td>268.6</td>
+      <td>0.08996</td>
+      <td>0.06444</td>
+      <td>0.0000</td>
+      <td>0.0000</td>
+      <td>0.2871</td>
+      <td>0.07039</td>
+    </tr>
+  </tbody>
+</table>
+<p>569 rows × 31 columns</p>
+</div>
+    <div class="colab-df-buttons">
+      
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-f06eac0b-0dd2-4002-965a-5b081e8ec7b2')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+      
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+    
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-f06eac0b-0dd2-4002-965a-5b081e8ec7b2 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-f06eac0b-0dd2-4002-965a-5b081e8ec7b2');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+  
+    </div>
+  </div>
+  </div></div>
+</div>
+</section>
+<section id="normalisasi-menggunakan-z-score">
+<h3>2. Normalisasi Menggunakan Z-Score<a class="headerlink" href="#normalisasi-menggunakan-z-score" title="Permalink to this heading">#</a></h3>
+<p>Normalisasi menggunakan Z-score atau biasa disebut Standarisasi yaitu merupakan teknik untuk mengubah nilai dalam data sehingga memiliki rata-rata 0 dan standar deviasi 1. Standarisasi membantu dalam mengubah distribusi data menjadi distribusi normal dan membandingkan variabel-variabel dengan unit yang berbeda.</p>
+<p>Z-Score Scalling digunakan untuk mengubah nilai dalam data dengan mengukur sejauh mana nilai dari rata-rata dalam satuan standar deviasinya.
+Z-score dihitung menggunakan rumus berikut:</p>
+<p><span class="math notranslate nohighlight">\(Z = \frac{(X - \mu)}{\sigma}\)</span></p>
+<p>dimana :</p>
+<ul class="simple">
+<li><p>(Z) : adalah Z-score,</p></li>
+<li><p>(X) : adalah nilai titik data,</p></li>
+<li><p><span class="math notranslate nohighlight">\((\mu) \text{ adalah rata-rata populasi, }\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(( \sigma)\text{ adalah standar deviasi populasi}\)</span></p></li>
+</ul>
+<p>Z-score menyediakan cara untuk mengukur seberapa ekstrim atau umum suatu nilai dalam distribusi data. Interpretasi Z-score sebagai berikut:</p>
+<ul class="simple">
+<li><p>Jika Z-score positif, titik data berada di atas rata-rata populasi.</p></li>
+<li><p>Jika Z-score negatif, titik data berada di bawah rata-rata populasi.</p></li>
+<li><p>Nilai Z-score nol menunjukkan bahwa titik data sama dengan rata-rata populasi.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">pickle</span> <span class="kn">import</span> <span class="n">dump</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="melakukan-standarisasi-pada-data-train">
+<h3>Melakukan standarisasi pada data train<a class="headerlink" href="#melakukan-standarisasi-pada-data-train" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Baca data dari file CSV</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/dsty13/dataset/main/BreastCancer.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Pisahkan fitur (X) dan label (y)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;diagnosis&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># menghapus kolom label &#39;diagnosis&#39; karena pada variabel X berisi fitur saja</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">dt</span><span class="p">[</span><span class="s1">&#39;diagnosis&#39;</span><span class="p">]</span> <span class="c1">#inisialisasi kolom label &#39;diagnosis&#39;</span>
+
+<span class="c1"># split data into train and test sets</span>
+<span class="n">X_train</span><span class="p">,</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span><span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mendefinisikan scaler</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="c1"># menghitung rata-rata dan standard deviasi tiap fitur (menggunakan rumus Z-score)</span>
+<span class="n">scaler</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="c1"># Transformasi nilai-nilai dari setiap fitur yang dihitung sebelumnya. Hasilnya adalah data latih dan data uji yang telah diskalakan.</span>
+<span class="n">X_train_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">X_test_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simpan proses normalisasi</span>
+<span class="n">dump</span><span class="p">(</span><span class="n">scaler</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;scaler_BC.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pickle</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;scaler_BC.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">standarisasi</span><span class="p">:</span>
+    <span class="n">loadscal</span><span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">standarisasi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="reduksi-dimensi-menggunakan-pca">
+<h3>3. Reduksi Dimensi menggunakan PCA<a class="headerlink" href="#reduksi-dimensi-menggunakan-pca" title="Permalink to this heading">#</a></h3>
+<p>Principal Component Analysis (PCA) adalah suatu metode statistik yang digunakan untuk mengidentifikasi pola dalam data multivariat dengan mereduksi dimensi variabel. PCA mencoba untuk mengekspresikan data dalam bentuk kombinasi linear dari variabel-variabel yang ada sehingga menjadi dimensi baru, yang disebut principal components dimana menggambarkan variasi data dengan baik. Berikut adalah rumus PCA dan penjelasannya:</p>
+<ol class="arabic">
+<li><p><strong>Hitung Matriks Kovarian:</strong></p>
+<p><span class="math notranslate nohighlight">\( \text{Cov}(\mathbf{X}) = \frac{1}{n-1} \sum_{i=1}^{n} (\mathbf{X}_i - \bar{\mathbf{X}})(\mathbf{X}_i - \bar{\mathbf{X}})^T \)</span></p>
+<p>di mana:</p>
+</li>
+</ol>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{X}_i \text{ adalah vektor data poin ke-i,}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{\mathbf{X}} \text{ adalah vektor rata-rata dari semua data,}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n \text{ adalah jumlah data poin.} \)</span></p></li>
+</ul>
+<ol class="arabic" start="2">
+<li><p><strong>Hitung Nilai dan Vektor Eigen:</strong> Menghitung nilai eigen (λ) dan vektor eigen (v) dari matriks kovarian.</p>
+<p><span class="math notranslate nohighlight">\( \text{Cov}(\mathbf{X})\mathbf{v} = \lambda\mathbf{v} \)</span></p>
+</li>
+<li><p><strong>Pilih Principal Components:</strong> Principal components dipilih berdasarkan nilai eigen tertinggi. Misalnya, jika kita ingin mereduksi dimensi menjadi k, kita memilih k vektor eigen dengan nilai eigen tertinggi.</p></li>
+<li><p><strong>Transformasi Data:</strong> Data asli (X) dapat diproyeksikan ke dalam ruang yang baru (Y) yang terdiri dari principal components yang dipilih.</p>
+<p><span class="math notranslate nohighlight">\( \mathbf{Y} = \mathbf{X} \mathbf{V} \)</span></p>
+<p>di mana:</p>
+</li>
+</ol>
+<ul class="simple">
+<li><p>(Y) : matriks yang berisi data yang telah diproyeksikan ke dalam ruang principal components,</p></li>
+<li><p>(X) : matriks data asli,</p></li>
+<li><p>(V) : matriks yang berisi vektor eigen sebagai kolom-kolomnya.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">pca_train</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>pca = PCA(n_components=15): yaitu membuat objek PCA dengan menyertakan
+parameter <code class="docutils literal notranslate"><span class="pre">n_components=15</span></code>. <code class="docutils literal notranslate"><span class="pre">n_components</span></code> adalah jumlah komponen utama (principal components) yang ingin dipertahankan setelah reduksi dimensi. Dalam hal ini akan digunakan 15 komponen utama.</p>
+<p>pca_train = pca.fit_transform(X_train_scaled): dimana menggunakan objek PCA yang telah dibuat (<code class="docutils literal notranslate"><span class="pre">pca</span></code>) untuk melakukan reduksi dimensi pada data latih (<code class="docutils literal notranslate"><span class="pre">X_train_scaled</span></code>).<code class="docutils literal notranslate"><span class="pre">fit_transform</span></code> digunakan untuk menghitung komponen utama dan mengubah data latih ke dalam ruang dimensi yang baru.Kemudian Hasilnya disimpan dalam variabel <code class="docutils literal notranslate"><span class="pre">pca_train</span></code>.</p>
+<p>data latih (<code class="docutils literal notranslate"><span class="pre">X_train_scaled</span></code>) sudah dinormalisasi sebelumnya (dengan menggunakan z-score normalization), dan PCA digunakan untuk menghasilkan representasi data yang lebih ringkas dengan hanya menggunakan 15 komponen utama.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pca_train</span><span class="o">.</span><span class="n">shape</span> <span class="c1">#untuk mengetahui tentang jumlah baris dan kolom dari data hasil PCA pada data uji.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(455, 15)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pca_test</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">)</span> <span class="c1">#untuk mentransformasi data uji menjadi ruang fitur baru yang dibentuk oleh komponen-komponen PCA</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pca_test</span><span class="o">.</span><span class="n">shape</span> <span class="c1">#untuk mengetahui tentang jumlah baris dan kolom dari data hasil transformasi PCA pada data latih.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(114, 15)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#simpan proses PCA</span>
+<span class="n">dump</span><span class="p">(</span><span class="n">pca</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;PCA_BC.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="mencari-metode-machine-learning-terbaik-menggunakan-pycaret">
+<h2>Mencari Metode Machine Learning terbaik menggunakan Pycaret<a class="headerlink" href="#mencari-metode-machine-learning-terbaik-menggunakan-pycaret" title="Permalink to this heading">#</a></h2>
+<p>PyCaret adalah sebuah library Python yang dirancang untuk memudahkan dan mempercepat proses pengembangan model machine learning. PyCaret menyediakan antarmuka yang mudah digunakan untuk melakukan berbagai tugas, termasuk eksplorasi data, pemilihan model, penyetelan parameter, evaluasi model, dan produksi model, semuanya dengan beberapa baris kode.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>pycaret
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pycaret
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading pycaret-3.2.0-py3-none-any.whl (484 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/484.7 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">71.7/484.7 kB</span> <span class=" -Color -Color-Red">1.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">481.3/484.7 kB</span> <span class=" -Color -Color-Red">7.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">484.7/484.7 kB</span> <span class=" -Color -Color-Red">6.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hCollecting category-encoders&gt;=2.4.0 (from pycaret)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading category_encoders-2.6.3-py2.py3-none-any.whl (81 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/81.9 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">81.9/81.9 kB</span> <span class=" -Color -Color-Red">9.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: cloudpickle in /usr/local/lib/python3.10/dist-packages (from pycaret) (2.2.1)
+Collecting deprecation&gt;=2.1.0 (from pycaret)
+  Downloading deprecation-2.1.0-py2.py3-none-any.whl (11 kB)
+Requirement already satisfied: imbalanced-learn&gt;=0.8.1 in /usr/local/lib/python3.10/dist-packages (from pycaret) (0.10.1)
+Requirement already satisfied: importlib-metadata&gt;=4.12.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (6.8.0)
+Requirement already satisfied: ipython&gt;=5.5.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (7.34.0)
+Requirement already satisfied: ipywidgets&gt;=7.6.5 in /usr/local/lib/python3.10/dist-packages (from pycaret) (7.7.1)
+Requirement already satisfied: jinja2&gt;=1.2 in /usr/local/lib/python3.10/dist-packages (from pycaret) (3.1.2)
+Requirement already satisfied: joblib&gt;=1.2.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (1.3.2)
+Collecting kaleido&gt;=0.2.1 (from pycaret)
+  Downloading kaleido-0.2.1-py2.py3-none-manylinux1_x86_64.whl (79.9 MB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/79.9 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.7/79.9 MB</span> <span class=" -Color -Color-Red">81.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">9.1/79.9 MB</span> <span class=" -Color -Color-Red">132.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">9.4/79.9 MB</span> <span class=" -Color -Color-Red">129.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">14.8/79.9 MB</span> <span class=" -Color -Color-Red">108.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">20.9/79.9 MB</span> <span class=" -Color -Color-Red">174.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">26.9/79.9 MB</span> <span class=" -Color -Color-Red">176.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">31.8/79.9 MB</span> <span class=" -Color -Color-Red">156.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">38.2/79.9 MB</span> <span class=" -Color -Color-Red">160.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">44.0/79.9 MB</span> <span class=" -Color -Color-Red">174.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">50.2/79.9 MB</span> <span class=" -Color -Color-Red">173.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━ <span class=" -Color -Color-Green">56.1/79.9 MB</span> <span class=" -Color -Color-Red">171.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━ <span class=" -Color -Color-Green">60.0/79.9 MB</span> <span class=" -Color -Color-Red">147.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━ <span class=" -Color -Color-Green">64.0/79.9 MB</span> <span class=" -Color -Color-Red">118.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━ <span class=" -Color -Color-Green">69.1/79.9 MB</span> <span class=" -Color -Color-Red">116.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━ <span class=" -Color -Color-Green">74.2/79.9 MB</span> <span class=" -Color -Color-Red">140.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">79.9/79.9 MB</span> <span class=" -Color -Color-Red">165.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">79.9/79.9 MB</span> <span class=" -Color -Color-Red">165.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">79.9/79.9 MB</span> <span class=" -Color -Color-Red">165.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">79.9/79.9 MB</span> <span class=" -Color -Color-Red">165.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">79.9/79.9 MB</span> <span class=" -Color -Color-Red">165.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">79.9/79.9 MB</span> <span class=" -Color -Color-Red">165.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">79.9/79.9 MB</span> <span class=" -Color -Color-Red">165.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">79.9/79.9 MB</span> <span class=" -Color -Color-Red">165.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">79.9/79.9 MB</span> <span class=" -Color -Color-Red">165.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">79.9/79.9 MB</span> <span class=" -Color -Color-Red">165.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">79.9/79.9 MB</span> <span class=" -Color -Color-Red">165.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">79.9/79.9 MB</span> <span class=" -Color -Color-Red">165.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">79.9/79.9 MB</span> <span class=" -Color -Color-Red">165.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">79.9/79.9 MB</span> <span class=" -Color -Color-Red">165.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">79.9/79.9 MB</span> <span class=" -Color -Color-Red">165.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">79.9/79.9 MB</span> <span class=" -Color -Color-Red">165.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">79.9/79.9 MB</span> <span class=" -Color -Color-Red">165.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">79.9/79.9 MB</span> <span class=" -Color -Color-Red">165.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">79.9/79.9 MB</span> <span class=" -Color -Color-Red">165.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">79.9/79.9 MB</span> <span class=" -Color -Color-Red">165.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">79.9/79.9 MB</span> <span class=" -Color -Color-Red">165.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">79.9/79.9 MB</span> <span class=" -Color -Color-Red">165.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">79.9/79.9 MB</span> <span class=" -Color -Color-Red">165.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">79.9/79.9 MB</span> <span class=" -Color -Color-Red">165.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">79.9/79.9 MB</span> <span class=" -Color -Color-Red">165.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">79.9/79.9 MB</span> <span class=" -Color -Color-Red">165.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">79.9/79.9 MB</span> <span class=" -Color -Color-Red">165.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">79.9/79.9 MB</span> <span class=" -Color -Color-Red">165.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">79.9/79.9 MB</span> <span class=" -Color -Color-Red">8.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: lightgbm&gt;=3.0.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (4.1.0)
+Requirement already satisfied: markupsafe&gt;=2.0.1 in /usr/local/lib/python3.10/dist-packages (from pycaret) (2.1.3)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting matplotlib&lt;=3.6,&gt;=3.3.0 (from pycaret)
+  Downloading matplotlib-3.6.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.8 MB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/11.8 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">5.2/11.8 MB</span> <span class=" -Color -Color-Red">173.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">7.3/11.8 MB</span> <span class=" -Color -Color-Red">142.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━ <span class=" -Color -Color-Green">11.1/11.8 MB</span> <span class=" -Color -Color-Red">102.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">11.8/11.8 MB</span> <span class=" -Color -Color-Red">100.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">11.8/11.8 MB</span> <span class=" -Color -Color-Red">66.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: nbformat&gt;=4.2.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (5.9.2)
+Requirement already satisfied: numba&gt;=0.55.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (0.58.1)
+Requirement already satisfied: numpy&lt;1.27,&gt;=1.21 in /usr/local/lib/python3.10/dist-packages (from pycaret) (1.23.5)
+Requirement already satisfied: pandas&lt;2.0.0,&gt;=1.3.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (1.5.3)
+Collecting plotly-resampler&gt;=0.8.3.1 (from pycaret)
+  Downloading plotly_resampler-0.9.1-py3-none-any.whl (73 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/73.4 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">73.4/73.4 kB</span> <span class=" -Color -Color-Red">5.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: plotly&gt;=5.0.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (5.15.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pmdarima!=1.8.1,&lt;3.0.0,&gt;=1.8.0 (from pycaret)
+  Downloading pmdarima-2.0.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl (2.1 MB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/2.1 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.1/2.1 MB</span> <span class=" -Color -Color-Red">79.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: psutil&gt;=5.9.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (5.9.5)
+Collecting pyod&gt;=1.0.8 (from pycaret)
+  Downloading pyod-1.1.2.tar.gz (160 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/160.5 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">160.5/160.5 kB</span> <span class=" -Color -Color-Red">18.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l?25hdone
+Requirement already satisfied: requests&gt;=2.27.1 in /usr/local/lib/python3.10/dist-packages (from pycaret) (2.31.0)
+Collecting schemdraw==0.15 (from pycaret)
+  Downloading schemdraw-0.15-py3-none-any.whl (106 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/106.8 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">106.8/106.8 kB</span> <span class=" -Color -Color-Red">13.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: scikit-learn&lt;1.3.0,&gt;=1.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (1.2.2)
+Collecting scikit-plot&gt;=0.3.7 (from pycaret)
+  Downloading scikit_plot-0.3.7-py3-none-any.whl (33 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting scipy~=1.10.1 (from pycaret)
+  Downloading scipy-1.10.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (34.4 MB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/34.4 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.7/34.4 MB</span> <span class=" -Color -Color-Red">111.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">7.4/34.4 MB</span> <span class=" -Color -Color-Red">106.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">11.4/34.4 MB</span> <span class=" -Color -Color-Red">106.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">15.4/34.4 MB</span> <span class=" -Color -Color-Red">107.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">19.7/34.4 MB</span> <span class=" -Color -Color-Red">115.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━ <span class=" -Color -Color-Green">24.0/34.4 MB</span> <span class=" -Color -Color-Red">119.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━ <span class=" -Color -Color-Green">28.0/34.4 MB</span> <span class=" -Color -Color-Red">114.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━ <span class=" -Color -Color-Green">32.6/34.4 MB</span> <span class=" -Color -Color-Red">119.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">34.4/34.4 MB</span> <span class=" -Color -Color-Red">120.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">34.4/34.4 MB</span> <span class=" -Color -Color-Red">120.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">34.4/34.4 MB</span> <span class=" -Color -Color-Red">120.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">34.4/34.4 MB</span> <span class=" -Color -Color-Red">120.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">34.4/34.4 MB</span> <span class=" -Color -Color-Red">120.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">34.4/34.4 MB</span> <span class=" -Color -Color-Red">120.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">34.4/34.4 MB</span> <span class=" -Color -Color-Red">120.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">34.4/34.4 MB</span> <span class=" -Color -Color-Red">120.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">34.4/34.4 MB</span> <span class=" -Color -Color-Red">120.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">34.4/34.4 MB</span> <span class=" -Color -Color-Red">120.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">34.4/34.4 MB</span> <span class=" -Color -Color-Red">120.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">34.4/34.4 MB</span> <span class=" -Color -Color-Red">120.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">34.4/34.4 MB</span> <span class=" -Color -Color-Red">120.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">34.4/34.4 MB</span> <span class=" -Color -Color-Red">120.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">34.4/34.4 MB</span> <span class=" -Color -Color-Red">120.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">34.4/34.4 MB</span> <span class=" -Color -Color-Red">120.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">34.4/34.4 MB</span> <span class=" -Color -Color-Red">15.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting sktime!=0.17.1,!=0.17.2,!=0.18.0,&lt;0.22.0,&gt;=0.16.1 (from pycaret)
+  Downloading sktime-0.21.1-py3-none-any.whl (17.1 MB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/17.1 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">5.8/17.1 MB</span> <span class=" -Color -Color-Red">129.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">9.7/17.1 MB</span> <span class=" -Color -Color-Red">120.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━ <span class=" -Color -Color-Green">14.3/17.1 MB</span> <span class=" -Color -Color-Red">120.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">17.1/17.1 MB</span> <span class=" -Color -Color-Red">120.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">17.1/17.1 MB</span> <span class=" -Color -Color-Red">120.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">17.1/17.1 MB</span> <span class=" -Color -Color-Red">120.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">17.1/17.1 MB</span> <span class=" -Color -Color-Red">51.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: statsmodels&gt;=0.12.1 in /usr/local/lib/python3.10/dist-packages (from pycaret) (0.14.0)
+Collecting tbats&gt;=1.1.3 (from pycaret)
+  Downloading tbats-1.1.3-py3-none-any.whl (44 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/44.0 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">44.0/44.0 kB</span> <span class=" -Color -Color-Red">4.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: tqdm&gt;=4.62.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (4.66.1)
+Requirement already satisfied: xxhash in /usr/local/lib/python3.10/dist-packages (from pycaret) (3.4.1)
+Requirement already satisfied: yellowbrick&gt;=1.4 in /usr/local/lib/python3.10/dist-packages (from pycaret) (1.5)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting wurlitzer (from pycaret)
+  Downloading wurlitzer-3.0.3-py3-none-any.whl (7.3 kB)
+Requirement already satisfied: patsy&gt;=0.5.1 in /usr/local/lib/python3.10/dist-packages (from category-encoders&gt;=2.4.0-&gt;pycaret) (0.5.3)
+Requirement already satisfied: packaging in /usr/local/lib/python3.10/dist-packages (from deprecation&gt;=2.1.0-&gt;pycaret) (23.2)
+Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /usr/local/lib/python3.10/dist-packages (from imbalanced-learn&gt;=0.8.1-&gt;pycaret) (3.2.0)
+Requirement already satisfied: zipp&gt;=0.5 in /usr/local/lib/python3.10/dist-packages (from importlib-metadata&gt;=4.12.0-&gt;pycaret) (3.17.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: setuptools&gt;=18.5 in /usr/local/lib/python3.10/dist-packages (from ipython&gt;=5.5.0-&gt;pycaret) (67.7.2)
+Requirement already satisfied: jedi&gt;=0.16 in /usr/local/lib/python3.10/dist-packages (from ipython&gt;=5.5.0-&gt;pycaret) (0.19.1)
+Requirement already satisfied: decorator in /usr/local/lib/python3.10/dist-packages (from ipython&gt;=5.5.0-&gt;pycaret) (4.4.2)
+Requirement already satisfied: pickleshare in /usr/local/lib/python3.10/dist-packages (from ipython&gt;=5.5.0-&gt;pycaret) (0.7.5)
+Requirement already satisfied: traitlets&gt;=4.2 in /usr/local/lib/python3.10/dist-packages (from ipython&gt;=5.5.0-&gt;pycaret) (5.7.1)
+Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in /usr/local/lib/python3.10/dist-packages (from ipython&gt;=5.5.0-&gt;pycaret) (3.0.41)
+Requirement already satisfied: pygments in /usr/local/lib/python3.10/dist-packages (from ipython&gt;=5.5.0-&gt;pycaret) (2.16.1)
+Requirement already satisfied: backcall in /usr/local/lib/python3.10/dist-packages (from ipython&gt;=5.5.0-&gt;pycaret) (0.2.0)
+Requirement already satisfied: matplotlib-inline in /usr/local/lib/python3.10/dist-packages (from ipython&gt;=5.5.0-&gt;pycaret) (0.1.6)
+Requirement already satisfied: pexpect&gt;4.3 in /usr/local/lib/python3.10/dist-packages (from ipython&gt;=5.5.0-&gt;pycaret) (4.8.0)
+Requirement already satisfied: ipykernel&gt;=4.5.1 in /usr/local/lib/python3.10/dist-packages (from ipywidgets&gt;=7.6.5-&gt;pycaret) (5.5.6)
+Requirement already satisfied: ipython-genutils~=0.2.0 in /usr/local/lib/python3.10/dist-packages (from ipywidgets&gt;=7.6.5-&gt;pycaret) (0.2.0)
+Requirement already satisfied: widgetsnbextension~=3.6.0 in /usr/local/lib/python3.10/dist-packages (from ipywidgets&gt;=7.6.5-&gt;pycaret) (3.6.6)
+Requirement already satisfied: jupyterlab-widgets&gt;=1.0.0 in /usr/local/lib/python3.10/dist-packages (from ipywidgets&gt;=7.6.5-&gt;pycaret) (3.0.9)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib&lt;=3.6,&gt;=3.3.0-&gt;pycaret) (1.2.0)
+Requirement already satisfied: cycler&gt;=0.10 in /usr/local/lib/python3.10/dist-packages (from matplotlib&lt;=3.6,&gt;=3.3.0-&gt;pycaret) (0.12.1)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /usr/local/lib/python3.10/dist-packages (from matplotlib&lt;=3.6,&gt;=3.3.0-&gt;pycaret) (4.44.3)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib&lt;=3.6,&gt;=3.3.0-&gt;pycaret) (1.4.5)
+Requirement already satisfied: pillow&gt;=6.2.0 in /usr/local/lib/python3.10/dist-packages (from matplotlib&lt;=3.6,&gt;=3.3.0-&gt;pycaret) (9.4.0)
+Requirement already satisfied: pyparsing&gt;=2.2.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib&lt;=3.6,&gt;=3.3.0-&gt;pycaret) (3.1.1)
+Requirement already satisfied: python-dateutil&gt;=2.7 in /usr/local/lib/python3.10/dist-packages (from matplotlib&lt;=3.6,&gt;=3.3.0-&gt;pycaret) (2.8.2)
+Requirement already satisfied: fastjsonschema in /usr/local/lib/python3.10/dist-packages (from nbformat&gt;=4.2.0-&gt;pycaret) (2.19.0)
+Requirement already satisfied: jsonschema&gt;=2.6 in /usr/local/lib/python3.10/dist-packages (from nbformat&gt;=4.2.0-&gt;pycaret) (4.19.2)
+Requirement already satisfied: jupyter-core in /usr/local/lib/python3.10/dist-packages (from nbformat&gt;=4.2.0-&gt;pycaret) (5.5.0)
+Requirement already satisfied: llvmlite&lt;0.42,&gt;=0.41.0dev0 in /usr/local/lib/python3.10/dist-packages (from numba&gt;=0.55.0-&gt;pycaret) (0.41.1)
+Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/lib/python3.10/dist-packages (from pandas&lt;2.0.0,&gt;=1.3.0-&gt;pycaret) (2023.3.post1)
+Requirement already satisfied: tenacity&gt;=6.2.0 in /usr/local/lib/python3.10/dist-packages (from plotly&gt;=5.0.0-&gt;pycaret) (8.2.3)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting dash&lt;3.0.0,&gt;=2.11.0 (from plotly-resampler&gt;=0.8.3.1-&gt;pycaret)
+  Downloading dash-2.14.1-py3-none-any.whl (10.4 MB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/10.4 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.9/10.4 MB</span> <span class=" -Color -Color-Red">116.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━ <span class=" -Color -Color-Green">7.4/10.4 MB</span> <span class=" -Color -Color-Red">101.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">10.4/10.4 MB</span> <span class=" -Color -Color-Red">103.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">10.4/10.4 MB</span> <span class=" -Color -Color-Red">103.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">10.4/10.4 MB</span> <span class=" -Color -Color-Red">59.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting orjson&lt;4.0.0,&gt;=3.8.0 (from plotly-resampler&gt;=0.8.3.1-&gt;pycaret)
+  Downloading orjson-3.9.10-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (138 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/138.7 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">138.7/138.7 kB</span> <span class=" -Color -Color-Red">14.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hCollecting trace-updater&gt;=0.0.8 (from plotly-resampler&gt;=0.8.3.1-&gt;pycaret)
+  Downloading trace_updater-0.0.9.1-py3-none-any.whl (185 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/185.2 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">185.2/185.2 kB</span> <span class=" -Color -Color-Red">20.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting tsdownsample==0.1.2 (from plotly-resampler&gt;=0.8.3.1-&gt;pycaret)
+  Downloading tsdownsample-0.1.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.3 MB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/2.3 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.3/2.3 MB</span> <span class=" -Color -Color-Red">66.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: Cython!=0.29.18,!=0.29.31,&gt;=0.29 in /usr/local/lib/python3.10/dist-packages (from pmdarima!=1.8.1,&lt;3.0.0,&gt;=1.8.0-&gt;pycaret) (3.0.5)
+Requirement already satisfied: urllib3 in /usr/local/lib/python3.10/dist-packages (from pmdarima!=1.8.1,&lt;3.0.0,&gt;=1.8.0-&gt;pycaret) (2.0.7)
+Requirement already satisfied: six in /usr/local/lib/python3.10/dist-packages (from pyod&gt;=1.0.8-&gt;pycaret) (1.16.0)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /usr/local/lib/python3.10/dist-packages (from requests&gt;=2.27.1-&gt;pycaret) (3.3.2)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/local/lib/python3.10/dist-packages (from requests&gt;=2.27.1-&gt;pycaret) (3.4)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.10/dist-packages (from requests&gt;=2.27.1-&gt;pycaret) (2023.7.22)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting deprecated&gt;=1.2.13 (from sktime!=0.17.1,!=0.17.2,!=0.18.0,&lt;0.22.0,&gt;=0.16.1-&gt;pycaret)
+  Downloading Deprecated-1.2.14-py2.py3-none-any.whl (9.6 kB)
+Collecting scikit-base&lt;0.6.0 (from sktime!=0.17.1,!=0.17.2,!=0.18.0,&lt;0.22.0,&gt;=0.16.1-&gt;pycaret)
+  Downloading scikit_base-0.5.2-py3-none-any.whl (118 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/119.0 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">119.0/119.0 kB</span> <span class=" -Color -Color-Red">13.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: Flask&lt;3.1,&gt;=1.0.4 in /usr/local/lib/python3.10/dist-packages (from dash&lt;3.0.0,&gt;=2.11.0-&gt;plotly-resampler&gt;=0.8.3.1-&gt;pycaret) (2.2.5)
+Requirement already satisfied: Werkzeug&lt;3.1 in /usr/local/lib/python3.10/dist-packages (from dash&lt;3.0.0,&gt;=2.11.0-&gt;plotly-resampler&gt;=0.8.3.1-&gt;pycaret) (3.0.1)
+Collecting dash-html-components==2.0.0 (from dash&lt;3.0.0,&gt;=2.11.0-&gt;plotly-resampler&gt;=0.8.3.1-&gt;pycaret)
+  Downloading dash_html_components-2.0.0-py3-none-any.whl (4.1 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting dash-core-components==2.0.0 (from dash&lt;3.0.0,&gt;=2.11.0-&gt;plotly-resampler&gt;=0.8.3.1-&gt;pycaret)
+  Downloading dash_core_components-2.0.0-py3-none-any.whl (3.8 kB)
+Collecting dash-table==5.0.0 (from dash&lt;3.0.0,&gt;=2.11.0-&gt;plotly-resampler&gt;=0.8.3.1-&gt;pycaret)
+  Downloading dash_table-5.0.0-py3-none-any.whl (3.9 kB)
+Requirement already satisfied: typing-extensions&gt;=4.1.1 in /usr/local/lib/python3.10/dist-packages (from dash&lt;3.0.0,&gt;=2.11.0-&gt;plotly-resampler&gt;=0.8.3.1-&gt;pycaret) (4.5.0)
+Collecting retrying (from dash&lt;3.0.0,&gt;=2.11.0-&gt;plotly-resampler&gt;=0.8.3.1-&gt;pycaret)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading retrying-1.3.4-py3-none-any.whl (11 kB)
+Collecting ansi2html (from dash&lt;3.0.0,&gt;=2.11.0-&gt;plotly-resampler&gt;=0.8.3.1-&gt;pycaret)
+  Downloading ansi2html-1.8.0-py3-none-any.whl (16 kB)
+Requirement already satisfied: nest-asyncio in /usr/local/lib/python3.10/dist-packages (from dash&lt;3.0.0,&gt;=2.11.0-&gt;plotly-resampler&gt;=0.8.3.1-&gt;pycaret) (1.5.8)
+Requirement already satisfied: wrapt&lt;2,&gt;=1.10 in /usr/local/lib/python3.10/dist-packages (from deprecated&gt;=1.2.13-&gt;sktime!=0.17.1,!=0.17.2,!=0.18.0,&lt;0.22.0,&gt;=0.16.1-&gt;pycaret) (1.14.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jupyter-client in /usr/local/lib/python3.10/dist-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (6.1.12)
+Requirement already satisfied: tornado&gt;=4.2 in /usr/local/lib/python3.10/dist-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (6.3.2)
+Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.3 in /usr/local/lib/python3.10/dist-packages (from jedi&gt;=0.16-&gt;ipython&gt;=5.5.0-&gt;pycaret) (0.8.3)
+Requirement already satisfied: attrs&gt;=22.2.0 in /usr/local/lib/python3.10/dist-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=4.2.0-&gt;pycaret) (23.1.0)
+Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in /usr/local/lib/python3.10/dist-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=4.2.0-&gt;pycaret) (2023.11.1)
+Requirement already satisfied: referencing&gt;=0.28.4 in /usr/local/lib/python3.10/dist-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=4.2.0-&gt;pycaret) (0.31.0)
+Requirement already satisfied: rpds-py&gt;=0.7.1 in /usr/local/lib/python3.10/dist-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=4.2.0-&gt;pycaret) (0.12.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ptyprocess&gt;=0.5 in /usr/local/lib/python3.10/dist-packages (from pexpect&gt;4.3-&gt;ipython&gt;=5.5.0-&gt;pycaret) (0.7.0)
+Requirement already satisfied: wcwidth in /usr/local/lib/python3.10/dist-packages (from prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0-&gt;ipython&gt;=5.5.0-&gt;pycaret) (0.2.10)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: notebook&gt;=4.4.1 in /usr/local/lib/python3.10/dist-packages (from widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (6.5.5)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: platformdirs&gt;=2.5 in /usr/local/lib/python3.10/dist-packages (from jupyter-core-&gt;nbformat&gt;=4.2.0-&gt;pycaret) (4.0.0)
+Requirement already satisfied: itsdangerous&gt;=2.0 in /usr/local/lib/python3.10/dist-packages (from Flask&lt;3.1,&gt;=1.0.4-&gt;dash&lt;3.0.0,&gt;=2.11.0-&gt;plotly-resampler&gt;=0.8.3.1-&gt;pycaret) (2.1.2)
+Requirement already satisfied: click&gt;=8.0 in /usr/local/lib/python3.10/dist-packages (from Flask&lt;3.1,&gt;=1.0.4-&gt;dash&lt;3.0.0,&gt;=2.11.0-&gt;plotly-resampler&gt;=0.8.3.1-&gt;pycaret) (8.1.7)
+Requirement already satisfied: pyzmq&lt;25,&gt;=17 in /usr/local/lib/python3.10/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (23.2.1)
+Requirement already satisfied: argon2-cffi in /usr/local/lib/python3.10/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (23.1.0)
+Requirement already satisfied: nbconvert&gt;=5 in /usr/local/lib/python3.10/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (6.5.4)
+Requirement already satisfied: Send2Trash&gt;=1.8.0 in /usr/local/lib/python3.10/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (1.8.2)
+Requirement already satisfied: terminado&gt;=0.8.3 in /usr/local/lib/python3.10/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (0.18.0)
+Requirement already satisfied: prometheus-client in /usr/local/lib/python3.10/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (0.18.0)
+Requirement already satisfied: nbclassic&gt;=0.4.7 in /usr/local/lib/python3.10/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (1.0.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jupyter-server&gt;=1.8 in /usr/local/lib/python3.10/dist-packages (from nbclassic&gt;=0.4.7-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (1.24.0)
+Requirement already satisfied: notebook-shim&gt;=0.2.3 in /usr/local/lib/python3.10/dist-packages (from nbclassic&gt;=0.4.7-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (0.2.3)
+Requirement already satisfied: lxml in /usr/local/lib/python3.10/dist-packages (from nbconvert&gt;=5-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (4.9.3)
+Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.10/dist-packages (from nbconvert&gt;=5-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (4.11.2)
+Requirement already satisfied: bleach in /usr/local/lib/python3.10/dist-packages (from nbconvert&gt;=5-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (6.1.0)
+Requirement already satisfied: defusedxml in /usr/local/lib/python3.10/dist-packages (from nbconvert&gt;=5-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (0.7.1)
+Requirement already satisfied: entrypoints&gt;=0.2.2 in /usr/local/lib/python3.10/dist-packages (from nbconvert&gt;=5-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (0.4)
+Requirement already satisfied: jupyterlab-pygments in /usr/local/lib/python3.10/dist-packages (from nbconvert&gt;=5-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (0.2.2)
+Requirement already satisfied: mistune&lt;2,&gt;=0.8.1 in /usr/local/lib/python3.10/dist-packages (from nbconvert&gt;=5-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (0.8.4)
+Requirement already satisfied: nbclient&gt;=0.5.0 in /usr/local/lib/python3.10/dist-packages (from nbconvert&gt;=5-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (0.7.4)
+Requirement already satisfied: pandocfilters&gt;=1.4.1 in /usr/local/lib/python3.10/dist-packages (from nbconvert&gt;=5-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (1.5.0)
+Requirement already satisfied: tinycss2 in /usr/local/lib/python3.10/dist-packages (from nbconvert&gt;=5-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (1.2.1)
+Requirement already satisfied: argon2-cffi-bindings in /usr/local/lib/python3.10/dist-packages (from argon2-cffi-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (21.2.0)
+Requirement already satisfied: anyio&lt;4,&gt;=3.1.0 in /usr/local/lib/python3.10/dist-packages (from jupyter-server&gt;=1.8-&gt;nbclassic&gt;=0.4.7-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (3.7.1)
+Requirement already satisfied: websocket-client in /usr/local/lib/python3.10/dist-packages (from jupyter-server&gt;=1.8-&gt;nbclassic&gt;=0.4.7-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (1.6.4)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: cffi&gt;=1.0.1 in /usr/local/lib/python3.10/dist-packages (from argon2-cffi-bindings-&gt;argon2-cffi-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (1.16.0)
+Requirement already satisfied: soupsieve&gt;1.2 in /usr/local/lib/python3.10/dist-packages (from beautifulsoup4-&gt;nbconvert&gt;=5-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (2.5)
+Requirement already satisfied: webencodings in /usr/local/lib/python3.10/dist-packages (from bleach-&gt;nbconvert&gt;=5-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (0.5.1)
+Requirement already satisfied: sniffio&gt;=1.1 in /usr/local/lib/python3.10/dist-packages (from anyio&lt;4,&gt;=3.1.0-&gt;jupyter-server&gt;=1.8-&gt;nbclassic&gt;=0.4.7-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (1.3.0)
+Requirement already satisfied: exceptiongroup in /usr/local/lib/python3.10/dist-packages (from anyio&lt;4,&gt;=3.1.0-&gt;jupyter-server&gt;=1.8-&gt;nbclassic&gt;=0.4.7-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (1.1.3)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pycparser in /usr/local/lib/python3.10/dist-packages (from cffi&gt;=1.0.1-&gt;argon2-cffi-bindings-&gt;argon2-cffi-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (2.21)
+Building wheels for collected packages: pyod
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for pyod (setup.py) ... ?25l?25hdone
+  Created wheel for pyod: filename=pyod-1.1.2-py3-none-any.whl size=190289 sha256=3a8e135ac035ffbe5f1dd7f948442ce5c8299efcf0d430bb067190673568ff48
+  Stored in directory: /root/.cache/pip/wheels/81/1b/61/aa85b78c3c0c8871f4231e3f4a03bb23cecb7db829498380ee
+Successfully built pyod
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: trace-updater, kaleido, dash-table, dash-html-components, dash-core-components, wurlitzer, tsdownsample, scipy, scikit-base, schemdraw, retrying, orjson, deprecation, deprecated, ansi2html, matplotlib, sktime, scikit-plot, pyod, dash, pmdarima, plotly-resampler, category-encoders, tbats, pycaret
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Attempting uninstall: scipy
+    Found existing installation: scipy 1.11.3
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Uninstalling scipy-1.11.3:
+      Successfully uninstalled scipy-1.11.3
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">ERROR: Operation cancelled by user</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+<p>Berikut merupakan code penggunaan pycaret dan penjelasannya :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pycaret.classification</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># Langkah 1: Baca data dari file CSV</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/dsty13/dataset/main/BreastCancer.csv&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+
+<span class="c1"># Langkah 2: Pilih kolom-kolom yang perlu dinormalisasi</span>
+<span class="n">kolom</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;radius_mean&#39;</span><span class="p">,</span><span class="s1">&#39;texture_mean&#39;</span><span class="p">,</span><span class="s1">&#39;perimeter_worst&#39;</span><span class="p">,</span><span class="s1">&#39;perimeter_mean&#39;</span><span class="p">,</span><span class="s1">&#39;area_mean&#39;</span><span class="p">,</span><span class="s1">&#39;perimeter_se&#39;</span><span class="p">,</span><span class="s1">&#39;area_se&#39;</span><span class="p">,</span><span class="s1">&#39;radius_worst&#39;</span><span class="p">,</span><span class="s1">&#39;texture_worst&#39;</span><span class="p">,</span><span class="s1">&#39;area_worst&#39;</span><span class="p">]</span>
+
+<span class="c1"># Langkah 3: Split data menjadi fitur (X) dan target (y)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;diagnosis&#39;</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">dt</span><span class="p">[</span><span class="s1">&#39;diagnosis&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;diagnosis&#39;, &#39;radius_mean&#39;, &#39;texture_mean&#39;, &#39;perimeter_mean&#39;,
+       &#39;area_mean&#39;, &#39;smoothness_mean&#39;, &#39;compactness_mean&#39;, &#39;concavity_mean&#39;,
+       &#39;concave points_mean&#39;, &#39;symmetry_mean&#39;, &#39;fractal_dimension_mean&#39;,
+       &#39;radius_se&#39;, &#39;texture_se&#39;, &#39;perimeter_se&#39;, &#39;area_se&#39;, &#39;smoothness_se&#39;,
+       &#39;compactness_se&#39;, &#39;concavity_se&#39;, &#39;concave points_se&#39;, &#39;symmetry_se&#39;,
+       &#39;fractal_dimension_se&#39;, &#39;radius_worst&#39;, &#39;texture_worst&#39;,
+       &#39;perimeter_worst&#39;, &#39;area_worst&#39;, &#39;smoothness_worst&#39;,
+       &#39;compactness_worst&#39;, &#39;concavity_worst&#39;, &#39;concave points_worst&#39;,
+       &#39;symmetry_worst&#39;, &#39;fractal_dimension_worst&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Pada Langkah 4</strong> terdapat Fungsi setup() yang digunakan untuk menyiapkan lingkungan PyCaret dengan menyediakan dataset dan menentukan target serta beberapa konfigurasi lainnya. PyCaret secara otomatis akan melakukan beberapa langkah pra-pemrosesan data dan menampilkan informasi statistik dasar tentang dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Langkah 4: Inisialisasi ekperimen PyCaret</span>
+<span class="n">exp</span> <span class="o">=</span> <span class="n">setup</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s1">&#39;diagnosis&#39;</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">train_size</span><span class="o">=</span> <span class="mf">0.8</span><span class="p">,</span> <span class="n">normalize_method</span><span class="o">=</span><span class="s1">&#39;zscore&#39;</span><span class="p">,</span><span class="n">pca</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">pca_method</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span><span class="n">pca_components</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">numeric_features</span><span class="o">=</span><span class="n">kolom</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+#T_992bd_row8_col1, #T_992bd_row12_col1, #T_992bd_row14_col1 {
+  background-color: lightgreen;
+}
+</style>
+<table id="T_992bd" class="dataframe">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_992bd_level0_col0" class="col_heading level0 col0" >Description</th>
+      <th id="T_992bd_level0_col1" class="col_heading level0 col1" >Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_992bd_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_992bd_row0_col0" class="data row0 col0" >Session id</td>
+      <td id="T_992bd_row0_col1" class="data row0 col1" >1397</td>
+    </tr>
+    <tr>
+      <th id="T_992bd_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_992bd_row1_col0" class="data row1 col0" >Target</td>
+      <td id="T_992bd_row1_col1" class="data row1 col1" >diagnosis</td>
+    </tr>
+    <tr>
+      <th id="T_992bd_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_992bd_row2_col0" class="data row2 col0" >Target type</td>
+      <td id="T_992bd_row2_col1" class="data row2 col1" >Binary</td>
+    </tr>
+    <tr>
+      <th id="T_992bd_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_992bd_row3_col0" class="data row3 col0" >Original data shape</td>
+      <td id="T_992bd_row3_col1" class="data row3 col1" >(569, 31)</td>
+    </tr>
+    <tr>
+      <th id="T_992bd_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_992bd_row4_col0" class="data row4 col0" >Transformed data shape</td>
+      <td id="T_992bd_row4_col1" class="data row4 col1" >(569, 16)</td>
+    </tr>
+    <tr>
+      <th id="T_992bd_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_992bd_row5_col0" class="data row5 col0" >Transformed train set shape</td>
+      <td id="T_992bd_row5_col1" class="data row5 col1" >(455, 16)</td>
+    </tr>
+    <tr>
+      <th id="T_992bd_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_992bd_row6_col0" class="data row6 col0" >Transformed test set shape</td>
+      <td id="T_992bd_row6_col1" class="data row6 col1" >(114, 16)</td>
+    </tr>
+    <tr>
+      <th id="T_992bd_level0_row7" class="row_heading level0 row7" >7</th>
+      <td id="T_992bd_row7_col0" class="data row7 col0" >Numeric features</td>
+      <td id="T_992bd_row7_col1" class="data row7 col1" >10</td>
+    </tr>
+    <tr>
+      <th id="T_992bd_level0_row8" class="row_heading level0 row8" >8</th>
+      <td id="T_992bd_row8_col0" class="data row8 col0" >Preprocess</td>
+      <td id="T_992bd_row8_col1" class="data row8 col1" >True</td>
+    </tr>
+    <tr>
+      <th id="T_992bd_level0_row9" class="row_heading level0 row9" >9</th>
+      <td id="T_992bd_row9_col0" class="data row9 col0" >Imputation type</td>
+      <td id="T_992bd_row9_col1" class="data row9 col1" >simple</td>
+    </tr>
+    <tr>
+      <th id="T_992bd_level0_row10" class="row_heading level0 row10" >10</th>
+      <td id="T_992bd_row10_col0" class="data row10 col0" >Numeric imputation</td>
+      <td id="T_992bd_row10_col1" class="data row10 col1" >mean</td>
+    </tr>
+    <tr>
+      <th id="T_992bd_level0_row11" class="row_heading level0 row11" >11</th>
+      <td id="T_992bd_row11_col0" class="data row11 col0" >Categorical imputation</td>
+      <td id="T_992bd_row11_col1" class="data row11 col1" >mode</td>
+    </tr>
+    <tr>
+      <th id="T_992bd_level0_row12" class="row_heading level0 row12" >12</th>
+      <td id="T_992bd_row12_col0" class="data row12 col0" >Normalize</td>
+      <td id="T_992bd_row12_col1" class="data row12 col1" >True</td>
+    </tr>
+    <tr>
+      <th id="T_992bd_level0_row13" class="row_heading level0 row13" >13</th>
+      <td id="T_992bd_row13_col0" class="data row13 col0" >Normalize method</td>
+      <td id="T_992bd_row13_col1" class="data row13 col1" >zscore</td>
+    </tr>
+    <tr>
+      <th id="T_992bd_level0_row14" class="row_heading level0 row14" >14</th>
+      <td id="T_992bd_row14_col0" class="data row14 col0" >PCA</td>
+      <td id="T_992bd_row14_col1" class="data row14 col1" >True</td>
+    </tr>
+    <tr>
+      <th id="T_992bd_level0_row15" class="row_heading level0 row15" >15</th>
+      <td id="T_992bd_row15_col0" class="data row15 col0" >PCA method</td>
+      <td id="T_992bd_row15_col1" class="data row15 col1" >linear</td>
+    </tr>
+    <tr>
+      <th id="T_992bd_level0_row16" class="row_heading level0 row16" >16</th>
+      <td id="T_992bd_row16_col0" class="data row16 col0" >PCA components</td>
+      <td id="T_992bd_row16_col1" class="data row16 col1" >15</td>
+    </tr>
+    <tr>
+      <th id="T_992bd_level0_row17" class="row_heading level0 row17" >17</th>
+      <td id="T_992bd_row17_col0" class="data row17 col0" >Fold Generator</td>
+      <td id="T_992bd_row17_col1" class="data row17 col1" >StratifiedKFold</td>
+    </tr>
+    <tr>
+      <th id="T_992bd_level0_row18" class="row_heading level0 row18" >18</th>
+      <td id="T_992bd_row18_col0" class="data row18 col0" >Fold Number</td>
+      <td id="T_992bd_row18_col1" class="data row18 col1" >10</td>
+    </tr>
+    <tr>
+      <th id="T_992bd_level0_row19" class="row_heading level0 row19" >19</th>
+      <td id="T_992bd_row19_col0" class="data row19 col0" >CPU Jobs</td>
+      <td id="T_992bd_row19_col1" class="data row19 col1" >-1</td>
+    </tr>
+    <tr>
+      <th id="T_992bd_level0_row20" class="row_heading level0 row20" >20</th>
+      <td id="T_992bd_row20_col0" class="data row20 col0" >Use GPU</td>
+      <td id="T_992bd_row20_col1" class="data row20 col1" >False</td>
+    </tr>
+    <tr>
+      <th id="T_992bd_level0_row21" class="row_heading level0 row21" >21</th>
+      <td id="T_992bd_row21_col0" class="data row21 col0" >Log Experiment</td>
+      <td id="T_992bd_row21_col1" class="data row21 col1" >False</td>
+    </tr>
+    <tr>
+      <th id="T_992bd_level0_row22" class="row_heading level0 row22" >22</th>
+      <td id="T_992bd_row22_col0" class="data row22 col0" >Experiment Name</td>
+      <td id="T_992bd_row22_col1" class="data row22 col1" >clf-default-name</td>
+    </tr>
+    <tr>
+      <th id="T_992bd_level0_row23" class="row_heading level0 row23" >23</th>
+      <td id="T_992bd_row23_col0" class="data row23 col0" >USI</td>
+      <td id="T_992bd_row23_col1" class="data row23 col1" >f352</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>Adapun Inisialisasi Eksperimen PyCaret pada code diatas meliputi:</p>
+<p>data: Menentukan dataset.</p>
+<p>target: Menentukan kolom target.</p>
+<p>normalize: Normalisasi fitur diaktifkan.</p>
+<p>train_size : Menentukan jumlah data latih.</p>
+<p>normalize_method: Metode normalisasi, dalam hal ini menggunakan Z-score normalization.</p>
+<p>pca: PCA (Principal Component Analysis) diaktifkan.</p>
+<p>pca_method: Metode PCA, dalam hal ini menggunakan metode linear.</p>
+<p>pca_components: Jumlah komponen PCA yang akan dihasilkan (yaitu 15 komponen).</p>
+<p>numeric_features: Kolom-kolom yang akan dinormalisasi.</p>
+<p><strong>Pada Langkah 5</strong> terdapat fungsi compare_models yang secara cepat membandingkan performa beberapa model machine learning tanpa perlu menulis banyak kode dan memberikan model terbaik berdasarkan metrik kinerja yang dihasilkan.</p>
+<p>best_model: Ini adalah model terbaik yang dihasilkan dari fungsi compare_models dan kemudian dicetak.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Langkah 5:Bandingkan model dan cari yang terbaik</span>
+<span class="n">best_model</span> <span class="o">=</span> <span class="n">compare_models</span><span class="p">()</span>
+
+<span class="n">best_model</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"></div><div class="output text_html"><style type="text/css">
+#T_973dc th {
+  text-align: left;
+}
+#T_973dc_row0_col0, #T_973dc_row0_col4, #T_973dc_row1_col0, #T_973dc_row1_col1, #T_973dc_row1_col2, #T_973dc_row1_col3, #T_973dc_row1_col4, #T_973dc_row1_col5, #T_973dc_row1_col6, #T_973dc_row1_col7, #T_973dc_row2_col0, #T_973dc_row2_col1, #T_973dc_row2_col2, #T_973dc_row2_col3, #T_973dc_row2_col4, #T_973dc_row2_col5, #T_973dc_row2_col6, #T_973dc_row2_col7, #T_973dc_row3_col0, #T_973dc_row3_col1, #T_973dc_row3_col2, #T_973dc_row3_col3, #T_973dc_row3_col4, #T_973dc_row3_col5, #T_973dc_row3_col6, #T_973dc_row3_col7, #T_973dc_row4_col0, #T_973dc_row4_col1, #T_973dc_row4_col2, #T_973dc_row4_col3, #T_973dc_row4_col4, #T_973dc_row4_col5, #T_973dc_row4_col6, #T_973dc_row4_col7, #T_973dc_row5_col0, #T_973dc_row5_col1, #T_973dc_row5_col2, #T_973dc_row5_col3, #T_973dc_row5_col4, #T_973dc_row5_col5, #T_973dc_row5_col6, #T_973dc_row5_col7, #T_973dc_row6_col0, #T_973dc_row6_col1, #T_973dc_row6_col2, #T_973dc_row6_col3, #T_973dc_row6_col4, #T_973dc_row6_col5, #T_973dc_row6_col6, #T_973dc_row6_col7, #T_973dc_row7_col0, #T_973dc_row7_col1, #T_973dc_row7_col2, #T_973dc_row7_col3, #T_973dc_row7_col5, #T_973dc_row7_col6, #T_973dc_row7_col7, #T_973dc_row8_col0, #T_973dc_row8_col1, #T_973dc_row8_col2, #T_973dc_row8_col3, #T_973dc_row8_col5, #T_973dc_row8_col6, #T_973dc_row8_col7, #T_973dc_row9_col0, #T_973dc_row9_col1, #T_973dc_row9_col2, #T_973dc_row9_col3, #T_973dc_row9_col4, #T_973dc_row9_col5, #T_973dc_row9_col6, #T_973dc_row9_col7, #T_973dc_row10_col0, #T_973dc_row10_col1, #T_973dc_row10_col2, #T_973dc_row10_col3, #T_973dc_row10_col4, #T_973dc_row10_col5, #T_973dc_row10_col6, #T_973dc_row10_col7, #T_973dc_row11_col0, #T_973dc_row11_col1, #T_973dc_row11_col2, #T_973dc_row11_col3, #T_973dc_row11_col4, #T_973dc_row11_col5, #T_973dc_row11_col6, #T_973dc_row11_col7, #T_973dc_row12_col0, #T_973dc_row12_col1, #T_973dc_row12_col2, #T_973dc_row12_col3, #T_973dc_row12_col4, #T_973dc_row12_col5, #T_973dc_row12_col6, #T_973dc_row12_col7, #T_973dc_row13_col0, #T_973dc_row13_col1, #T_973dc_row13_col2, #T_973dc_row13_col3, #T_973dc_row13_col4, #T_973dc_row13_col5, #T_973dc_row13_col6, #T_973dc_row13_col7, #T_973dc_row14_col0, #T_973dc_row14_col1, #T_973dc_row14_col2, #T_973dc_row14_col3, #T_973dc_row14_col4, #T_973dc_row14_col5, #T_973dc_row14_col6, #T_973dc_row14_col7 {
+  text-align: left;
+}
+#T_973dc_row0_col1, #T_973dc_row0_col2, #T_973dc_row0_col3, #T_973dc_row0_col5, #T_973dc_row0_col6, #T_973dc_row0_col7, #T_973dc_row7_col4, #T_973dc_row8_col4 {
+  text-align: left;
+  background-color: yellow;
+}
+#T_973dc_row0_col8, #T_973dc_row1_col8, #T_973dc_row2_col8, #T_973dc_row3_col8, #T_973dc_row4_col8, #T_973dc_row5_col8, #T_973dc_row6_col8, #T_973dc_row8_col8, #T_973dc_row9_col8, #T_973dc_row10_col8, #T_973dc_row11_col8, #T_973dc_row12_col8, #T_973dc_row13_col8, #T_973dc_row14_col8 {
+  text-align: left;
+  background-color: lightgrey;
+}
+#T_973dc_row7_col8 {
+  text-align: left;
+  background-color: yellow;
+  background-color: lightgrey;
+}
+</style>
+<table id="T_973dc" class="dataframe">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_973dc_level0_col0" class="col_heading level0 col0" >Model</th>
+      <th id="T_973dc_level0_col1" class="col_heading level0 col1" >Accuracy</th>
+      <th id="T_973dc_level0_col2" class="col_heading level0 col2" >AUC</th>
+      <th id="T_973dc_level0_col3" class="col_heading level0 col3" >Recall</th>
+      <th id="T_973dc_level0_col4" class="col_heading level0 col4" >Prec.</th>
+      <th id="T_973dc_level0_col5" class="col_heading level0 col5" >F1</th>
+      <th id="T_973dc_level0_col6" class="col_heading level0 col6" >Kappa</th>
+      <th id="T_973dc_level0_col7" class="col_heading level0 col7" >MCC</th>
+      <th id="T_973dc_level0_col8" class="col_heading level0 col8" >TT (Sec)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_973dc_level0_row0" class="row_heading level0 row0" >lr</th>
+      <td id="T_973dc_row0_col0" class="data row0 col0" >Logistic Regression</td>
+      <td id="T_973dc_row0_col1" class="data row0 col1" >0.9759</td>
+      <td id="T_973dc_row0_col2" class="data row0 col2" >0.9992</td>
+      <td id="T_973dc_row0_col3" class="data row0 col3" >0.9588</td>
+      <td id="T_973dc_row0_col4" class="data row0 col4" >0.9777</td>
+      <td id="T_973dc_row0_col5" class="data row0 col5" >0.9666</td>
+      <td id="T_973dc_row0_col6" class="data row0 col6" >0.9479</td>
+      <td id="T_973dc_row0_col7" class="data row0 col7" >0.9498</td>
+      <td id="T_973dc_row0_col8" class="data row0 col8" >1.3960</td>
+    </tr>
+    <tr>
+      <th id="T_973dc_level0_row1" class="row_heading level0 row1" >svm</th>
+      <td id="T_973dc_row1_col0" class="data row1 col0" >SVM - Linear Kernel</td>
+      <td id="T_973dc_row1_col1" class="data row1 col1" >0.9693</td>
+      <td id="T_973dc_row1_col2" class="data row1 col2" >0.0000</td>
+      <td id="T_973dc_row1_col3" class="data row1 col3" >0.9529</td>
+      <td id="T_973dc_row1_col4" class="data row1 col4" >0.9683</td>
+      <td id="T_973dc_row1_col5" class="data row1 col5" >0.9581</td>
+      <td id="T_973dc_row1_col6" class="data row1 col6" >0.9340</td>
+      <td id="T_973dc_row1_col7" class="data row1 col7" >0.9370</td>
+      <td id="T_973dc_row1_col8" class="data row1 col8" >0.0440</td>
+    </tr>
+    <tr>
+      <th id="T_973dc_level0_row2" class="row_heading level0 row2" >knn</th>
+      <td id="T_973dc_row2_col0" class="data row2 col0" >K Neighbors Classifier</td>
+      <td id="T_973dc_row2_col1" class="data row2 col1" >0.9671</td>
+      <td id="T_973dc_row2_col2" class="data row2 col2" >0.9888</td>
+      <td id="T_973dc_row2_col3" class="data row2 col3" >0.9353</td>
+      <td id="T_973dc_row2_col4" class="data row2 col4" >0.9768</td>
+      <td id="T_973dc_row2_col5" class="data row2 col5" >0.9539</td>
+      <td id="T_973dc_row2_col6" class="data row2 col6" >0.9285</td>
+      <td id="T_973dc_row2_col7" class="data row2 col7" >0.9309</td>
+      <td id="T_973dc_row2_col8" class="data row2 col8" >0.1330</td>
+    </tr>
+    <tr>
+      <th id="T_973dc_level0_row3" class="row_heading level0 row3" >et</th>
+      <td id="T_973dc_row3_col0" class="data row3 col0" >Extra Trees Classifier</td>
+      <td id="T_973dc_row3_col1" class="data row3 col1" >0.9651</td>
+      <td id="T_973dc_row3_col2" class="data row3 col2" >0.9949</td>
+      <td id="T_973dc_row3_col3" class="data row3 col3" >0.9235</td>
+      <td id="T_973dc_row3_col4" class="data row3 col4" >0.9814</td>
+      <td id="T_973dc_row3_col5" class="data row3 col5" >0.9491</td>
+      <td id="T_973dc_row3_col6" class="data row3 col6" >0.9228</td>
+      <td id="T_973dc_row3_col7" class="data row3 col7" >0.9264</td>
+      <td id="T_973dc_row3_col8" class="data row3 col8" >0.1930</td>
+    </tr>
+    <tr>
+      <th id="T_973dc_level0_row4" class="row_heading level0 row4" >lightgbm</th>
+      <td id="T_973dc_row4_col0" class="data row4 col0" >Light Gradient Boosting Machine</td>
+      <td id="T_973dc_row4_col1" class="data row4 col1" >0.9649</td>
+      <td id="T_973dc_row4_col2" class="data row4 col2" >0.9941</td>
+      <td id="T_973dc_row4_col3" class="data row4 col3" >0.9471</td>
+      <td id="T_973dc_row4_col4" class="data row4 col4" >0.9594</td>
+      <td id="T_973dc_row4_col5" class="data row4 col5" >0.9526</td>
+      <td id="T_973dc_row4_col6" class="data row4 col6" >0.9247</td>
+      <td id="T_973dc_row4_col7" class="data row4 col7" >0.9256</td>
+      <td id="T_973dc_row4_col8" class="data row4 col8" >1.2270</td>
+    </tr>
+    <tr>
+      <th id="T_973dc_level0_row5" class="row_heading level0 row5" >ada</th>
+      <td id="T_973dc_row5_col0" class="data row5 col0" >Ada Boost Classifier</td>
+      <td id="T_973dc_row5_col1" class="data row5 col1" >0.9627</td>
+      <td id="T_973dc_row5_col2" class="data row5 col2" >0.9932</td>
+      <td id="T_973dc_row5_col3" class="data row5 col3" >0.9353</td>
+      <td id="T_973dc_row5_col4" class="data row5 col4" >0.9651</td>
+      <td id="T_973dc_row5_col5" class="data row5 col5" >0.9486</td>
+      <td id="T_973dc_row5_col6" class="data row5 col6" >0.9194</td>
+      <td id="T_973dc_row5_col7" class="data row5 col7" >0.9213</td>
+      <td id="T_973dc_row5_col8" class="data row5 col8" >0.2560</td>
+    </tr>
+    <tr>
+      <th id="T_973dc_level0_row6" class="row_heading level0 row6" >qda</th>
+      <td id="T_973dc_row6_col0" class="data row6 col0" >Quadratic Discriminant Analysis</td>
+      <td id="T_973dc_row6_col1" class="data row6 col1" >0.9605</td>
+      <td id="T_973dc_row6_col2" class="data row6 col2" >0.9907</td>
+      <td id="T_973dc_row6_col3" class="data row6 col3" >0.9412</td>
+      <td id="T_973dc_row6_col4" class="data row6 col4" >0.9562</td>
+      <td id="T_973dc_row6_col5" class="data row6 col5" >0.9456</td>
+      <td id="T_973dc_row6_col6" class="data row6 col6" >0.9147</td>
+      <td id="T_973dc_row6_col7" class="data row6 col7" >0.9183</td>
+      <td id="T_973dc_row6_col8" class="data row6 col8" >0.0720</td>
+    </tr>
+    <tr>
+      <th id="T_973dc_level0_row7" class="row_heading level0 row7" >ridge</th>
+      <td id="T_973dc_row7_col0" class="data row7 col0" >Ridge Classifier</td>
+      <td id="T_973dc_row7_col1" class="data row7 col1" >0.9583</td>
+      <td id="T_973dc_row7_col2" class="data row7 col2" >0.0000</td>
+      <td id="T_973dc_row7_col3" class="data row7 col3" >0.9059</td>
+      <td id="T_973dc_row7_col4" class="data row7 col4" >0.9816</td>
+      <td id="T_973dc_row7_col5" class="data row7 col5" >0.9404</td>
+      <td id="T_973dc_row7_col6" class="data row7 col6" >0.9086</td>
+      <td id="T_973dc_row7_col7" class="data row7 col7" >0.9121</td>
+      <td id="T_973dc_row7_col8" class="data row7 col8" >0.0430</td>
+    </tr>
+    <tr>
+      <th id="T_973dc_level0_row8" class="row_heading level0 row8" >lda</th>
+      <td id="T_973dc_row8_col0" class="data row8 col0" >Linear Discriminant Analysis</td>
+      <td id="T_973dc_row8_col1" class="data row8 col1" >0.9583</td>
+      <td id="T_973dc_row8_col2" class="data row8 col2" >0.9969</td>
+      <td id="T_973dc_row8_col3" class="data row8 col3" >0.9059</td>
+      <td id="T_973dc_row8_col4" class="data row8 col4" >0.9816</td>
+      <td id="T_973dc_row8_col5" class="data row8 col5" >0.9404</td>
+      <td id="T_973dc_row8_col6" class="data row8 col6" >0.9086</td>
+      <td id="T_973dc_row8_col7" class="data row8 col7" >0.9121</td>
+      <td id="T_973dc_row8_col8" class="data row8 col8" >0.0760</td>
+    </tr>
+    <tr>
+      <th id="T_973dc_level0_row9" class="row_heading level0 row9" >xgboost</th>
+      <td id="T_973dc_row9_col0" class="data row9 col0" >Extreme Gradient Boosting</td>
+      <td id="T_973dc_row9_col1" class="data row9 col1" >0.9582</td>
+      <td id="T_973dc_row9_col2" class="data row9 col2" >0.9942</td>
+      <td id="T_973dc_row9_col3" class="data row9 col3" >0.9412</td>
+      <td id="T_973dc_row9_col4" class="data row9 col4" >0.9508</td>
+      <td id="T_973dc_row9_col5" class="data row9 col5" >0.9443</td>
+      <td id="T_973dc_row9_col6" class="data row9 col6" >0.9109</td>
+      <td id="T_973dc_row9_col7" class="data row9 col7" >0.9130</td>
+      <td id="T_973dc_row9_col8" class="data row9 col8" >0.1000</td>
+    </tr>
+    <tr>
+      <th id="T_973dc_level0_row10" class="row_heading level0 row10" >gbc</th>
+      <td id="T_973dc_row10_col0" class="data row10 col0" >Gradient Boosting Classifier</td>
+      <td id="T_973dc_row10_col1" class="data row10 col1" >0.9473</td>
+      <td id="T_973dc_row10_col2" class="data row10 col2" >0.9889</td>
+      <td id="T_973dc_row10_col3" class="data row10 col3" >0.9353</td>
+      <td id="T_973dc_row10_col4" class="data row10 col4" >0.9302</td>
+      <td id="T_973dc_row10_col5" class="data row10 col5" >0.9307</td>
+      <td id="T_973dc_row10_col6" class="data row10 col6" >0.8883</td>
+      <td id="T_973dc_row10_col7" class="data row10 col7" >0.8908</td>
+      <td id="T_973dc_row10_col8" class="data row10 col8" >0.4090</td>
+    </tr>
+    <tr>
+      <th id="T_973dc_level0_row11" class="row_heading level0 row11" >rf</th>
+      <td id="T_973dc_row11_col0" class="data row11 col0" >Random Forest Classifier</td>
+      <td id="T_973dc_row11_col1" class="data row11 col1" >0.9429</td>
+      <td id="T_973dc_row11_col2" class="data row11 col2" >0.9850</td>
+      <td id="T_973dc_row11_col3" class="data row11 col3" >0.9235</td>
+      <td id="T_973dc_row11_col4" class="data row11 col4" >0.9286</td>
+      <td id="T_973dc_row11_col5" class="data row11 col5" >0.9230</td>
+      <td id="T_973dc_row11_col6" class="data row11 col6" >0.8777</td>
+      <td id="T_973dc_row11_col7" class="data row11 col7" >0.8815</td>
+      <td id="T_973dc_row11_col8" class="data row11 col8" >0.3700</td>
+    </tr>
+    <tr>
+      <th id="T_973dc_level0_row12" class="row_heading level0 row12" >dt</th>
+      <td id="T_973dc_row12_col0" class="data row12 col0" >Decision Tree Classifier</td>
+      <td id="T_973dc_row12_col1" class="data row12 col1" >0.9209</td>
+      <td id="T_973dc_row12_col2" class="data row12 col2" >0.9202</td>
+      <td id="T_973dc_row12_col3" class="data row12 col3" >0.9176</td>
+      <td id="T_973dc_row12_col4" class="data row12 col4" >0.8821</td>
+      <td id="T_973dc_row12_col5" class="data row12 col5" >0.8965</td>
+      <td id="T_973dc_row12_col6" class="data row12 col6" >0.8328</td>
+      <td id="T_973dc_row12_col7" class="data row12 col7" >0.8368</td>
+      <td id="T_973dc_row12_col8" class="data row12 col8" >0.1050</td>
+    </tr>
+    <tr>
+      <th id="T_973dc_level0_row13" class="row_heading level0 row13" >nb</th>
+      <td id="T_973dc_row13_col0" class="data row13 col0" >Naive Bayes</td>
+      <td id="T_973dc_row13_col1" class="data row13 col1" >0.8966</td>
+      <td id="T_973dc_row13_col2" class="data row13 col2" >0.9521</td>
+      <td id="T_973dc_row13_col3" class="data row13 col3" >0.8353</td>
+      <td id="T_973dc_row13_col4" class="data row13 col4" >0.8866</td>
+      <td id="T_973dc_row13_col5" class="data row13 col5" >0.8566</td>
+      <td id="T_973dc_row13_col6" class="data row13 col6" >0.7762</td>
+      <td id="T_973dc_row13_col7" class="data row13 col7" >0.7805</td>
+      <td id="T_973dc_row13_col8" class="data row13 col8" >0.0790</td>
+    </tr>
+    <tr>
+      <th id="T_973dc_level0_row14" class="row_heading level0 row14" >dummy</th>
+      <td id="T_973dc_row14_col0" class="data row14 col0" >Dummy Classifier</td>
+      <td id="T_973dc_row14_col1" class="data row14 col1" >0.6263</td>
+      <td id="T_973dc_row14_col2" class="data row14 col2" >0.5000</td>
+      <td id="T_973dc_row14_col3" class="data row14 col3" >0.0000</td>
+      <td id="T_973dc_row14_col4" class="data row14 col4" >0.0000</td>
+      <td id="T_973dc_row14_col5" class="data row14 col5" >0.0000</td>
+      <td id="T_973dc_row14_col6" class="data row14 col6" >0.0000</td>
+      <td id="T_973dc_row14_col7" class="data row14 col7" >0.0000</td>
+      <td id="T_973dc_row14_col8" class="data row14 col8" >0.0630</td>
+    </tr>
+  </tbody>
+</table>
+</div><script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "5e4c22918f50466e9883d887ad474e6c"}</script><div class="output text_html"></div><div class="output text_html"><style>#sk-container-id-1 {color: black;background-color: white;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+                   intercept_scaling=1, l1_ratio=None, max_iter=1000,
+                   multi_class=&#x27;auto&#x27;, n_jobs=None, penalty=&#x27;l2&#x27;,
+                   random_state=1397, solver=&#x27;lbfgs&#x27;, tol=0.0001, verbose=0,
+                   warm_start=False)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">LogisticRegression</label><div class="sk-toggleable__content"><pre>LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+                   intercept_scaling=1, l1_ratio=None, max_iter=1000,
+                   multi_class=&#x27;auto&#x27;, n_jobs=None, penalty=&#x27;l2&#x27;,
+                   random_state=1397, solver=&#x27;lbfgs&#x27;, tol=0.0001, verbose=0,
+                   warm_start=False)</pre></div></div></div></div></div></div></div>
+</div>
+<p>Dari hasil pycaret diatas didapatkan <strong>best_model</strong> terbaik yaitu pada metode <strong>Logistic Regression</strong>.</p>
+<section id="simpan-model-terbaik-dari-hasil-pycaret">
+<h3>Simpan Model terbaik dari hasil Pycaret<a class="headerlink" href="#simpan-model-terbaik-dari-hasil-pycaret" title="Permalink to this heading">#</a></h3>
+<p>Model terbaik yang didapat dari hasil compare_models pada Pycaret maka akan dilakukan simpan model yang nantinya digunakan untuk klasifikasi Jenis Kanker Payudara.</p>
+<p>Dengan menggunakan fungsi create_model, maka dapat membuat dan mengatur model machine learning. PyCaret akan secara otomatis mengatur parameter untuk meningkatkan performa model.</p>
+<p>Fungsi save_model digunakan untuk menyimpan model ke dalam suatu file.</p>
+<p>Fungsi load_model digunakan untuk memuat kembali model yang telah disimpan sebelumnya.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">best_model</span> <span class="o">=</span> <span class="n">create_model</span><span class="p">(</span><span class="s1">&#39;lr&#39;</span><span class="p">)</span>
+<span class="n">save_model</span><span class="p">(</span><span class="n">best_model</span><span class="p">,</span><span class="s1">&#39;lr_BC&#39;</span><span class="p">)</span>
+<span class="n">loaded_model</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s1">&#39;lr_BC&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"></div><div class="output text_html"><style type="text/css">
+#T_c4c33_row10_col0, #T_c4c33_row10_col1, #T_c4c33_row10_col2, #T_c4c33_row10_col3, #T_c4c33_row10_col4, #T_c4c33_row10_col5, #T_c4c33_row10_col6 {
+  background: yellow;
+}
+</style>
+<table id="T_c4c33" class="dataframe">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_c4c33_level0_col0" class="col_heading level0 col0" >Accuracy</th>
+      <th id="T_c4c33_level0_col1" class="col_heading level0 col1" >AUC</th>
+      <th id="T_c4c33_level0_col2" class="col_heading level0 col2" >Recall</th>
+      <th id="T_c4c33_level0_col3" class="col_heading level0 col3" >Prec.</th>
+      <th id="T_c4c33_level0_col4" class="col_heading level0 col4" >F1</th>
+      <th id="T_c4c33_level0_col5" class="col_heading level0 col5" >Kappa</th>
+      <th id="T_c4c33_level0_col6" class="col_heading level0 col6" >MCC</th>
+    </tr>
+    <tr>
+      <th class="index_name level0" >Fold</th>
+      <th class="blank col0" >&nbsp;</th>
+      <th class="blank col1" >&nbsp;</th>
+      <th class="blank col2" >&nbsp;</th>
+      <th class="blank col3" >&nbsp;</th>
+      <th class="blank col4" >&nbsp;</th>
+      <th class="blank col5" >&nbsp;</th>
+      <th class="blank col6" >&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_c4c33_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_c4c33_row0_col0" class="data row0 col0" >1.0000</td>
+      <td id="T_c4c33_row0_col1" class="data row0 col1" >1.0000</td>
+      <td id="T_c4c33_row0_col2" class="data row0 col2" >1.0000</td>
+      <td id="T_c4c33_row0_col3" class="data row0 col3" >1.0000</td>
+      <td id="T_c4c33_row0_col4" class="data row0 col4" >1.0000</td>
+      <td id="T_c4c33_row0_col5" class="data row0 col5" >1.0000</td>
+      <td id="T_c4c33_row0_col6" class="data row0 col6" >1.0000</td>
+    </tr>
+    <tr>
+      <th id="T_c4c33_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_c4c33_row1_col0" class="data row1 col0" >0.9565</td>
+      <td id="T_c4c33_row1_col1" class="data row1 col1" >1.0000</td>
+      <td id="T_c4c33_row1_col2" class="data row1 col2" >1.0000</td>
+      <td id="T_c4c33_row1_col3" class="data row1 col3" >0.8947</td>
+      <td id="T_c4c33_row1_col4" class="data row1 col4" >0.9444</td>
+      <td id="T_c4c33_row1_col5" class="data row1 col5" >0.9089</td>
+      <td id="T_c4c33_row1_col6" class="data row1 col6" >0.9127</td>
+    </tr>
+    <tr>
+      <th id="T_c4c33_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_c4c33_row2_col0" class="data row2 col0" >0.9348</td>
+      <td id="T_c4c33_row2_col1" class="data row2 col1" >0.9959</td>
+      <td id="T_c4c33_row2_col2" class="data row2 col2" >0.8824</td>
+      <td id="T_c4c33_row2_col3" class="data row2 col3" >0.9375</td>
+      <td id="T_c4c33_row2_col4" class="data row2 col4" >0.9091</td>
+      <td id="T_c4c33_row2_col5" class="data row2 col5" >0.8583</td>
+      <td id="T_c4c33_row2_col6" class="data row2 col6" >0.8593</td>
+    </tr>
+    <tr>
+      <th id="T_c4c33_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_c4c33_row3_col0" class="data row3 col0" >0.9783</td>
+      <td id="T_c4c33_row3_col1" class="data row3 col1" >1.0000</td>
+      <td id="T_c4c33_row3_col2" class="data row3 col2" >1.0000</td>
+      <td id="T_c4c33_row3_col3" class="data row3 col3" >0.9444</td>
+      <td id="T_c4c33_row3_col4" class="data row3 col4" >0.9714</td>
+      <td id="T_c4c33_row3_col5" class="data row3 col5" >0.9539</td>
+      <td id="T_c4c33_row3_col6" class="data row3 col6" >0.9549</td>
+    </tr>
+    <tr>
+      <th id="T_c4c33_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_c4c33_row4_col0" class="data row4 col0" >0.9565</td>
+      <td id="T_c4c33_row4_col1" class="data row4 col1" >0.9959</td>
+      <td id="T_c4c33_row4_col2" class="data row4 col2" >0.8824</td>
+      <td id="T_c4c33_row4_col3" class="data row4 col3" >1.0000</td>
+      <td id="T_c4c33_row4_col4" class="data row4 col4" >0.9375</td>
+      <td id="T_c4c33_row4_col5" class="data row4 col5" >0.9044</td>
+      <td id="T_c4c33_row4_col6" class="data row4 col6" >0.9085</td>
+    </tr>
+    <tr>
+      <th id="T_c4c33_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_c4c33_row5_col0" class="data row5 col0" >1.0000</td>
+      <td id="T_c4c33_row5_col1" class="data row5 col1" >1.0000</td>
+      <td id="T_c4c33_row5_col2" class="data row5 col2" >1.0000</td>
+      <td id="T_c4c33_row5_col3" class="data row5 col3" >1.0000</td>
+      <td id="T_c4c33_row5_col4" class="data row5 col4" >1.0000</td>
+      <td id="T_c4c33_row5_col5" class="data row5 col5" >1.0000</td>
+      <td id="T_c4c33_row5_col6" class="data row5 col6" >1.0000</td>
+    </tr>
+    <tr>
+      <th id="T_c4c33_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_c4c33_row6_col0" class="data row6 col0" >1.0000</td>
+      <td id="T_c4c33_row6_col1" class="data row6 col1" >1.0000</td>
+      <td id="T_c4c33_row6_col2" class="data row6 col2" >1.0000</td>
+      <td id="T_c4c33_row6_col3" class="data row6 col3" >1.0000</td>
+      <td id="T_c4c33_row6_col4" class="data row6 col4" >1.0000</td>
+      <td id="T_c4c33_row6_col5" class="data row6 col5" >1.0000</td>
+      <td id="T_c4c33_row6_col6" class="data row6 col6" >1.0000</td>
+    </tr>
+    <tr>
+      <th id="T_c4c33_level0_row7" class="row_heading level0 row7" >7</th>
+      <td id="T_c4c33_row7_col0" class="data row7 col0" >1.0000</td>
+      <td id="T_c4c33_row7_col1" class="data row7 col1" >1.0000</td>
+      <td id="T_c4c33_row7_col2" class="data row7 col2" >1.0000</td>
+      <td id="T_c4c33_row7_col3" class="data row7 col3" >1.0000</td>
+      <td id="T_c4c33_row7_col4" class="data row7 col4" >1.0000</td>
+      <td id="T_c4c33_row7_col5" class="data row7 col5" >1.0000</td>
+      <td id="T_c4c33_row7_col6" class="data row7 col6" >1.0000</td>
+    </tr>
+    <tr>
+      <th id="T_c4c33_level0_row8" class="row_heading level0 row8" >8</th>
+      <td id="T_c4c33_row8_col0" class="data row8 col0" >0.9333</td>
+      <td id="T_c4c33_row8_col1" class="data row8 col1" >1.0000</td>
+      <td id="T_c4c33_row8_col2" class="data row8 col2" >0.8235</td>
+      <td id="T_c4c33_row8_col3" class="data row8 col3" >1.0000</td>
+      <td id="T_c4c33_row8_col4" class="data row8 col4" >0.9032</td>
+      <td id="T_c4c33_row8_col5" class="data row8 col5" >0.8531</td>
+      <td id="T_c4c33_row8_col6" class="data row8 col6" >0.8625</td>
+    </tr>
+    <tr>
+      <th id="T_c4c33_level0_row9" class="row_heading level0 row9" >9</th>
+      <td id="T_c4c33_row9_col0" class="data row9 col0" >1.0000</td>
+      <td id="T_c4c33_row9_col1" class="data row9 col1" >1.0000</td>
+      <td id="T_c4c33_row9_col2" class="data row9 col2" >1.0000</td>
+      <td id="T_c4c33_row9_col3" class="data row9 col3" >1.0000</td>
+      <td id="T_c4c33_row9_col4" class="data row9 col4" >1.0000</td>
+      <td id="T_c4c33_row9_col5" class="data row9 col5" >1.0000</td>
+      <td id="T_c4c33_row9_col6" class="data row9 col6" >1.0000</td>
+    </tr>
+    <tr>
+      <th id="T_c4c33_level0_row10" class="row_heading level0 row10" >Mean</th>
+      <td id="T_c4c33_row10_col0" class="data row10 col0" >0.9759</td>
+      <td id="T_c4c33_row10_col1" class="data row10 col1" >0.9992</td>
+      <td id="T_c4c33_row10_col2" class="data row10 col2" >0.9588</td>
+      <td id="T_c4c33_row10_col3" class="data row10 col3" >0.9777</td>
+      <td id="T_c4c33_row10_col4" class="data row10 col4" >0.9666</td>
+      <td id="T_c4c33_row10_col5" class="data row10 col5" >0.9479</td>
+      <td id="T_c4c33_row10_col6" class="data row10 col6" >0.9498</td>
+    </tr>
+    <tr>
+      <th id="T_c4c33_level0_row11" class="row_heading level0 row11" >Std</th>
+      <td id="T_c4c33_row11_col0" class="data row11 col0" >0.0268</td>
+      <td id="T_c4c33_row11_col1" class="data row11 col1" >0.0016</td>
+      <td id="T_c4c33_row11_col2" class="data row11 col2" >0.0647</td>
+      <td id="T_c4c33_row11_col3" class="data row11 col3" >0.0362</td>
+      <td id="T_c4c33_row11_col4" class="data row11 col4" >0.0378</td>
+      <td id="T_c4c33_row11_col5" class="data row11 col5" >0.0583</td>
+      <td id="T_c4c33_row11_col6" class="data row11 col6" >0.0562</td>
+    </tr>
+  </tbody>
+</table>
+</div><script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "afbeb5155cf4402abb7744c33fb2fd7f"}</script><div class="output text_html"></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Transformation Pipeline and Model Successfully Saved
+Transformation Pipeline and Model Successfully Loaded
+</pre></div>
+</div>
+</div>
+</div>
+<p>##Klasifikasi Menggunakan Logistic Regression</p>
+<p><strong>Logistic Regression</strong> adalah salah satu metode regresi yang umum digunakan untuk memodelkan hubungan antara variabel dependen biner (dua kelas) dengan satu atau lebih variabel independen atau prediktor. Meskipun disebut “regresi,” logistic regression sebenarnya digunakan untuk tugas klasifikasi, khususnya klasifikasi biner.</p>
+<p>Berikut adalah beberapa konsep dan karakteristik utama terkait dengan Logistic Regression:</p>
+<ol class="arabic">
+<li><p><strong>Fungsi Logistik (Sigmoid Function)</strong>: fungsi matematis yang menghasilkan kurva S-shaped (mirip huruf S). Fungsi ini umumnya digunakan dalam konteks regresi logistik untuk mengubah nilai z yang bersifat kontinu menjadi nilai probabilitas yang berkisar antara 0 dan 1. Fungsi sigmoid mengonversi nilai input (z) menjadi output yang dapat diinterpretasikan sebagai probabilitas. Fungsi ini memiliki bentuk matematis sebagai berikut:</p>
+<p><span class="math notranslate nohighlight">\(\sigma(z) = \frac{1}{1 + e^{-z}}\)</span></p>
+<p>di mana (z) adalah kombinasi linear dari variabel independen dan parameter model.</p>
+</li>
+<li><p><strong>Rumus Log-Odds (Logit Function)</strong>: Logit function mengonversi nilai odds menjadi skala logaritmik, dan didefinisikan sebagai berikut:</p>
+<p><span class="math notranslate nohighlight">\(\text{logit}(p) = \ln\left(\frac{p}{1-p}\right)\)</span></p>
+<p>di mana (p) adalah probabilitas kejadian sukses (kelas 1).</p>
+</li>
+<li><p><strong>Model Logistic Regression</strong>: Model logistic regression dapat dinyatakan dalam bentuk matematika sebagai berikut:
+<span class="math notranslate nohighlight">\(\text{logit}(p) = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \ldots + \beta_n x_n\)</span></p>
+<p>di mana:</p>
+</li>
+</ol>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((\beta_0)\text{ : intercept, }\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((\beta_1, \beta_2, \ldots, \beta_n) \text{ : koefisien model, }\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(( x_1, x_2, \ldots, x_n) \text{ : variabel independen.}\)</span></p></li>
+</ul>
+<p><strong>Visualisasi Fungsi Sigmoid</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fungsi sigmoid</span>
+<span class="k">def</span> <span class="nf">sigmoid</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">z</span><span class="p">))</span>
+
+<span class="c1"># Menghasilkan rentang nilai z</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="c1"># Hitung nilai sigmoid dari z</span>
+<span class="n">sigmoid_z</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+
+<span class="c1"># Visualisasi kurva sigmoid</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">sigmoid_z</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Sigmoid Function&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;sigmoid(z)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Visualisasi Fungsi Sigmoid&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Threshold = 0.5&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Decision Boundary = 0&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/00901564d1d354d287e3c1eba5ba52c429ee0fc0f905af8791f43a8fb630bd57.png" src="_images/00901564d1d354d287e3c1eba5ba52c429ee0fc0f905af8791f43a8fb630bd57.png" />
+</div>
+</div>
+<p>Gambar diatas merupakan visualisasi kurva sigmoid yang menunjukkan bagaimana fungsi tersebut berperilaku sebagai fungsi pemetaan dari nilai z ke probabilitas kelas. Garis putus-putus pada y = 0.5 adalah ambang batas yang sering digunakan untuk memprediksi kelas (Misalnya, jika threshold yang digunakan adalah 0.5, maka probabilitas yang lebih besar dari 0.5 akan dianggap sebagai kelas satu, sementara probabilitas yang kurang dari 0.5 akan dianggap sebagai kelas lainnya), dan garis putus-putus pada x = 0 adalah batas keputusan (decision boundary) dalam model regresi logistik.</p>
+<p><strong>Code Logistik Regression</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">confusion_matrix</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">logging</span> <span class="kn">import</span> <span class="n">LogRecord</span>
+<span class="c1"># Inisialisasi model Logistic Regression</span>
+<span class="n">lr_model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+<span class="c1"># Melatih model pada data latih</span>
+<span class="n">lr_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">pca_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-container-id-2 {color: black;background-color: white;}#sk-container-id-2 pre{padding: 0;}#sk-container-id-2 div.sk-toggleable {background-color: white;}#sk-container-id-2 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-2 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-2 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-2 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-2 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-2 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-2 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-2 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-2 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-2 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-2 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-2 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-2 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-2 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-2 div.sk-item {position: relative;z-index: 1;}#sk-container-id-2 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-2 div.sk-item::before, #sk-container-id-2 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-2 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-2 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-2 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-2 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-2 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-2 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-2 div.sk-label-container {text-align: center;}#sk-container-id-2 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-2 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-2" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+                   intercept_scaling=1, l1_ratio=None, max_iter=100,
+                   multi_class=&#x27;auto&#x27;, n_jobs=None, penalty=&#x27;l2&#x27;,
+                   random_state=None, solver=&#x27;lbfgs&#x27;, tol=0.0001, verbose=0,
+                   warm_start=False)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox" checked><label for="sk-estimator-id-2" class="sk-toggleable__label sk-toggleable__label-arrow">LogisticRegression</label><div class="sk-toggleable__content"><pre>LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+                   intercept_scaling=1, l1_ratio=None, max_iter=100,
+                   multi_class=&#x27;auto&#x27;, n_jobs=None, penalty=&#x27;l2&#x27;,
+                   random_state=None, solver=&#x27;lbfgs&#x27;, tol=0.0001, verbose=0,
+                   warm_start=False)</pre></div></div></div></div></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Membuat prediksi pada data uji</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">lr_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">pca_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Evaluasi performa model</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+
+<span class="c1"># Menampilkan hasil</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 0.9824561403508771
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dump</span><span class="p">(</span><span class="n">lr_model</span><span class="p">,</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;BC_lr.pkl&#39;</span><span class="p">,</span><span class="s1">&#39;wb&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>##UJI COBA MENGGUNAKAN STREAMLIT</p>
+<p>Link streamlit dapat diakses pada : <a class="reference external" href="https://breastcancer-clasification.streamlit.app/">Klasifikasi Breast Cancer</a></p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to your Jupyter Book</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="AudioEmosi.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi-data">Deskripsi Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data">Eksplorasi Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mengubah-kolom-kategorical-menjadi-numerik-menggunakan-label-encoder">1. Mengubah Kolom Kategorical Menjadi Numerik Menggunakan Label Encoder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-menggunakan-z-score">2. Normalisasi Menggunakan Z-Score</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#melakukan-standarisasi-pada-data-train">Melakukan standarisasi pada data train</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reduksi-dimensi-menggunakan-pca">3. Reduksi Dimensi menggunakan PCA</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-metode-machine-learning-terbaik-menggunakan-pycaret">Mencari Metode Machine Learning terbaik menggunakan Pycaret</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simpan-model-terbaik-dari-hasil-pycaret">Simpan Model terbaik dari hasil Pycaret</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
